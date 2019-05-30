@@ -1,0 +1,107 @@
+package com.zking.ssm.model;
+
+import java.io.Serializable;
+
+public class Order implements Serializable {
+    private String oid;
+
+    private Integer uid;
+
+    private String blno;
+
+    private String credate;
+
+    private String onumber;
+
+    private Integer ostate;
+
+    private String pid;
+
+    private String lid;
+
+    private String oaddress;
+
+    private Integer thstate;
+
+    private static final long serialVersionUID = 1L;
+
+    public String getOid() {
+        return oid;
+    }
+
+    public void setOid(String oid) {
+        this.oid = oid == null ? null : oid.trim();
+    }
+
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
+
+    public String getBlno() {
+        return blno;
+    }
+
+    public void setBlno(String blno) {
+        this.blno = blno == null ? null : blno.trim();
+    }
+
+    public String getCredate() {
+        return credate;
+    }
+
+    public void setCredate(String credate) {
+        this.credate = credate == null ? null : credate.trim();
+    }
+
+    public String getOnumber() {
+        return onumber;
+    }
+
+    public void setOnumber(String onumber) {
+        this.onumber = onumber == null ? null : onumber.trim();
+    }
+
+    public Integer getOstate() {
+        return ostate;
+    }
+
+    public void setOstate(Integer ostate) {
+        this.ostate = ostate;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid == null ? null : pid.trim();
+    }
+
+    public String getLid() {
+        return lid;
+    }
+
+    public void setLid(String lid) {
+        this.lid = lid == null ? null : lid.trim();
+    }
+
+    public String getOaddress() {
+        return oaddress;
+    }
+
+    public void setOaddress(String oaddress) {
+        this.oaddress = oaddress == null ? null : oaddress.trim();
+    }
+
+    public Integer getThstate() {
+        return thstate;
+    }
+
+    public void setThstate(Integer thstate) {
+        this.thstate = thstate;
+    }
+}
