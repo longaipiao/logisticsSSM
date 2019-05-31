@@ -1,6 +1,6 @@
 package com.zking.ssm.test;
 
-import com.zking.ssm.dao.UserMapper;
+import com.zking.ssm.mapper.UserMapper;
 import com.zking.ssm.model.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
