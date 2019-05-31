@@ -79,7 +79,7 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--向com.zking.dao中的接口注入sqlSessionFactory实例，这样接口可以直接使用该实例 -->
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
-        <property name="basePackage" value="com.zking.ssm.dao"/>
+        <property name="basePackage" value="com.zking.ssm.mapper"/>
     </bean>
 
     <!--8:开启spring事务管理 在service中的impl中使用事务-->

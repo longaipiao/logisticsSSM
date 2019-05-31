@@ -60,7 +60,8 @@
 </div>
 <div class="bg_header">
     <div class="page_con">
-        <h1 class="logo_text"><a href="../../index.jsp"><img alt="" width="100px" height="" src="../../images/logo_text.png"/></a></h1>
+        <h1 class="logo_text"><a href="../../index.jsp"><img alt="" width="100px" height=""
+                                                             src="../../images/logo_text.png"/></a></h1>
         <ul class="nav">
             <li><a href="../04_railway_booking/booking_no_quote.jsp">铁路订舱</a></li>
             <li><a class="current" href="../05_railway_class/railway_class.jsp">铁路班列</a></li>
@@ -69,10 +70,10 @@
         </ul>
         <a href="../../index.jsp">
             <h1 class="logo_icon"></h1>
-        </a> </div>
+        </a></div>
 </div>
 <div class="bg_header_second">
-    <div class="page_con"> <a href="../../index.jsp">
+    <div class="page_con"><a href="../../index.jsp">
         <h2 class="logo_navS"></h2>
     </a>
         <ul class="navS">
@@ -123,13 +124,13 @@
         <li><a href="#">
             <div class="sidebox"><i class="rs_2"></i>1-666-888</div>
         </a></li>
-        <li><a class="bounceInRight dialog_help demo40" href="#" >
+        <li><a class="bounceInRight dialog_help demo40" href="#">
             <div class="sidebox"><i class="rs_3"></i>需要帮助吗？</div>
         </a></li>
-        <li><a href="#" >
+        <li><a href="#">
             <div class="sidebox sidebox_wx"><i class="rs_4"></i><img src="../../images/qrcode.png" alt=""/></div>
         </a></li>
-        <li><a href="#" >
+        <li><a href="#">
             <div class="sidebox"><i class="rs_5"></i>在线客服</div>
         </a></li>
         <li style="border:none;"><a href="javascript:goTop();" class="sidetop"><i class="rs_6"></i></a></li>
@@ -150,15 +151,15 @@
     <div class="bg_class_cu">
         <div class="voyage">航程：33天</div>
         <ul class="line_cu">
-            <li>DALIAN · CHINA&nbsp;大连 </li>
+            <li>DALIAN · CHINA&nbsp;大连</li>
             <li class="sorrow"></li>
             <li>UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</li>
         </ul>
         <ul class="line_cu_info">
-            <li>承运人：某某铁运 </li>
+            <li>承运人：某某铁运</li>
             <li>中转方式：直达</li>
-            <li>预计发车日期：2018-04-12 </li>
-            <li>车名／班次：TOLEDO  TRIUMPH/0978-005w</li>
+            <li>预计发车日期：2018-04-12</li>
+            <li>车名／班次：TOLEDO TRIUMPH/0978-005w</li>
             <li>路线代码：FAL6</li>
         </ul>
     </div>
@@ -170,16 +171,18 @@
                     <li style="line-height: 18px;margin-top:16px;">
                         <lable>
                             <div class="wrap_input input_style checkbox_bg">
-                                <input type="checkbox" name="q" value="1">
+                                <input id="s" type="checkbox" name="q" value="1">
                             </div>
-                            始发站（大连）需要提货吗？ </lable>
+                            始发站（大连）需要提货吗？
+                        </lable>
                     </li>
                     <li style="line-height: 18px;;margin-top:30px;">
                         <lable>
                             <div class="wrap_input input_style checkbox_bg">
-                                <input type="checkbox" name="t" value="2">
+                                <input id="z" type="checkbox" name="t" value="2">
                             </div>
-                            终点站（乌斯特鲁加）需要送货吗？</lable>
+                            终点站（乌斯特鲁加）需要送货吗？
+                        </lable>
                     </li>
 
                 </ul>
@@ -190,7 +193,7 @@
                     <li class="title">货物明细</li>
                     <li><b class="b2">总重量(kg):</b>
                         <div class="length_r">
-                            <input type="text" class="input_reg" placeholder="请输入总重量" />
+                            <input id="zl" type="text" class="input_reg" placeholder="请输入总重量"/>
                         </div>
                     </li>
                     <li></li>
@@ -201,7 +204,7 @@
         <div class="btn_wrap" style="margin:0">
             <div class="btn_inline">
                 <ul>
-                    <li> <a href="2_quotation.jsp" class="btn_login">获取报价</a> </li>
+                    <li><a href="javascript:void(0);" onclick="hqbj()" class="btn_login">获取报价</a></li>
 
                 </ul>
 
@@ -230,8 +233,8 @@
                             <input type="text" class="input_login" placeholder="密码"/>
                         </li>
                     </ul>
-                    <div id="mpanel1" > </div>
-                    <a href="../../index_logged_in.jsp" class="btn_login">登录</a> </div>
+                    <div id="mpanel1"></div>
+                    <a href="../../index_logged_in.jsp" class="btn_login">登录</a></div>
                 <div class="tab_con_list">
                     <ul>
                         <li>
@@ -241,17 +244,17 @@
                             <input type="text" class="input_login" placeholder="密码"/>
                         </li>
                     </ul>
-                    <div id="mpanel2" > </div>
-                    <a href="../../index_logged_in.jsp" class="btn_login">登录</a> </div>
+                    <div id="mpanel2"></div>
+                    <a href="../../index_logged_in.jsp" class="btn_login">登录</a></div>
             </div>
         </div>
     </div>
-    <div class="wrap_register"> <a href="javascript:;" title="关闭" class="closeL">×</a>
+    <div class="wrap_register"><a href="javascript:;" title="关闭" class="closeL">×</a>
         <div class="info_reg">
             <h2>注册</h2>
             <p>只需几步即可创建您的个人帐户<br/>
                 并直接使用我们的在线服务。</p>
-            <a class="btn_reg" href="../02_help/register_1.jsp">注册</a> </div>
+            <a class="btn_reg" href="../02_help/register_1.jsp">注册</a></div>
     </div>
 </div>
 <div class="login_bg"></div>
@@ -292,16 +295,20 @@
     </div>
 </div>
 <div class="wrap_tcp" id="dialog3">
-    <h3>电子订舱协议 <a href="javascript:;" title="关闭" class="close_t">×</a> </h3>
+    <h3>电子订舱协议 <a href="javascript:;" title="关闭" class="close_t">×</a></h3>
     <div class="content_tcp">
         <p>本协议由您与应运物流管理有限公司共同缔结，本协议具有合同效力。</p>
         <p>本协议中协议双方合称协议方，应运物流管理有限公司在协议中亦称为“订舱公司”。本协议中“应运物流”指由应运物流管理有限公司运营的网络交易平台，域名为rail.com。</p>
         <h5>一、协议内容及签署</h5>
-        <p>1．本协议内容包括协议正文及所有rail已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的组成部分，与协议正文具有同等法律效力。除另行明确声明外，任何rail及其关联公司提供的服务（以下称为“rail”）均受本协议约束。</p>
-        <p>2．您应当在使用rail服务之前认真阅读全部协议内容，对于协议中以加粗字体显示的内容，您应重点阅读。如您对协议有任何疑问的，应向rail咨询。但无论您事实上在使用rail服务之前是否认真阅读了本协议内容，只要您使用rail服务，则本协议即对您产生约束，届时您不应以未阅读本协议的内容或者未获得rail对您问询的解答等理由，主张本协议无效，或要求撤销本协议。</p>
+        <p>
+            1．本协议内容包括协议正文及所有rail已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的组成部分，与协议正文具有同等法律效力。除另行明确声明外，任何rail及其关联公司提供的服务（以下称为“rail”）均受本协议约束。</p>
+        <p>
+            2．您应当在使用rail服务之前认真阅读全部协议内容，对于协议中以加粗字体显示的内容，您应重点阅读。如您对协议有任何疑问的，应向rail咨询。但无论您事实上在使用rail服务之前是否认真阅读了本协议内容，只要您使用rail服务，则本协议即对您产生约束，届时您不应以未阅读本协议的内容或者未获得rail对您问询的解答等理由，主张本协议无效，或要求撤销本协议。</p>
         <h5>二、协议内容及签署</h5>
-        <p>1．本协议内容包括协议正文及所有rail已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的组成部分，与协议正文具有同等法律效力。除另行明确声明外，任何rail及其关联公司提供的服务（以下称为“rail”）均受本协议约束。</p>
-        <p>2．您应当在使用rail服务之前认真阅读全部协议内容，对于协议中以加粗字体显示的内容，您应重点阅读。如您对协议有任何疑问的，应向rail咨询。但无论您事实上在使用rail服务之前是否认真阅读了本协议内容，只要您使用rail服务，则本协议即对您产生约束，届时您不应以未阅读本协议的内容或者未获得rail对您问询的解答等理由，主张本协议无效，或要求撤销本协议。</p>
+        <p>
+            1．本协议内容包括协议正文及所有rail已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的组成部分，与协议正文具有同等法律效力。除另行明确声明外，任何rail及其关联公司提供的服务（以下称为“rail”）均受本协议约束。</p>
+        <p>
+            2．您应当在使用rail服务之前认真阅读全部协议内容，对于协议中以加粗字体显示的内容，您应重点阅读。如您对协议有任何疑问的，应向rail咨询。但无论您事实上在使用rail服务之前是否认真阅读了本协议内容，只要您使用rail服务，则本协议即对您产生约束，届时您不应以未阅读本协议的内容或者未获得rail对您问询的解答等理由，主张本协议无效，或要求撤销本协议。</p>
         <P>&nbsp;</P>
     </div>
 </div>
@@ -310,10 +317,11 @@
 <script src="../../js/slider.js" type="text/javascript"></script>
 <script type="text/javascript" src="../../js/jquery.hDialog.min.js"></script>
 <script type="text/javascript" src="../../js/laydate/laydate.js"></script>
+<script src=""
 <script type="text/javascript">
-    $(function(){
+    $(function () {
         //执行多个日历
-        lay('.lay_t_item').each(function(){
+        lay('.lay_t_item').each(function () {
             laydate.render({
                 elem: this
             });
@@ -321,38 +329,36 @@
     });
 
 
-
-
-    $(function(){
-   /*滑动验证*/
+    $(function () {
+        /*滑动验证*/
         $('#mpanel1').slideVerify({
-            type : 1,		//类型
-            vOffset : 5,	//误差量，根据需求自行调整
-            barSize : {
-                width : '398px',
-                height : '54px',
+            type: 1,		//类型
+            vOffset: 5,	//误差量，根据需求自行调整
+            barSize: {
+                width: '398px',
+                height: '54px',
             },
-            ready : function() {
+            ready: function () {
             },
 
 
         });
 
         $('#mpanel2').slideVerify({
-            type : 1,		//类型
-            vOffset : 5,	//误差量，根据需求自行调整
-            barSize : {
-                width : '398px',
-                height : '54px',
+            type: 1,		//类型
+            vOffset: 5,	//误差量，根据需求自行调整
+            barSize: {
+                width: '398px',
+                height: '54px',
             },
-            ready : function() {
+            ready: function () {
             },
 
 
         });
 
 //右侧帮助弹出
-        $(function(){
+        $(function () {
             var $el = $('.dialog_help');
             $el.hDialog(); //默认调用
             //slideOutRight关闭效果
@@ -361,7 +367,20 @@
 
         });
 
+</script>
+<script>
+        function hqbj() {
 
+            var s = $('#s').prop('checked');
+            var z = $('#z').prop('checked');
+            var zl = $('#zl').val();
+            if (zl<50) {
+                $('#zl').css("color","red");
+                layer.msg("重量不能低于50kg");
+            }else {
+                window.location.href="/addPrice?s="+s+"&z="+z+"&zl="+zl+"";
+            }
+        }
 
 </script>
 </body>

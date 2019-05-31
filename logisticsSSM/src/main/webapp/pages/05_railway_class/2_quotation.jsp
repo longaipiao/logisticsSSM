@@ -195,87 +195,11 @@
                 <table>
                     <tr>
                         <th>陆运费：</th>
-                        <td>USD 750</td>
-                    </tr>
-                    <tr>
-                        <th>LSS：</th>
-                        <td>USD 15</td>
-                    </tr>
-                    <tr>
-                        <th>ENS：</th>
-                        <td>USD 25</td>
-                    </tr>
-                    <tr>
-                        <th>THC：</th>
-                        <td>CNY 250</td>
-                    </tr>
-                    <tr>
-                        <th>单证费：</th>
-                        <td>CNY 450</td>
-                    </tr>
-                    <tr>
-                        <th>VGM：</th>
-                        <td>CNY 20</td>
-                    </tr>
-                    <tr>
-                        <th>铅封费：</th>
-                        <td>CNY 30</td>
+                        <td>RMB 750</td>
                     </tr>
                     <tr>
                         <th>服务费：</th>
-                        <td>CNY 70</td>
-                    </tr>
-                    <tr>
-                        <th>护关服务费：</th>
-                        <td>CNY 70</td>
-                    </tr>
-                    <tr>
-                        <th>联单费：</th>
-                        <td>CNY 0</td>
-                    </tr>
-                    <tr>
-                        <th>THC：</th>
-                        <td>CNY 250</td>
-                    </tr>
-                    <tr>
-                        <th>单证费：</th>
-                        <td>CNY 450</td>
-                    </tr>
-                    <tr>
-                        <th>VGM：</th>
-                        <td>CNY 20</td>
-                    </tr>
-                    <tr>
-                        <th>铅封费：</th>
-                        <td>CNY 30</td>
-                    </tr>
-                    <tr>
-                        <th>服务费：</th>
-                        <td>CNY 70</td>
-                    </tr>
-                    <tr>
-                        <th>护关服务费：</th>
-                        <td>CNY 70</td>
-                    </tr>
-                    <tr>
-                        <th>VGM：</th>
-                        <td>CNY 20</td>
-                    </tr>
-                    <tr>
-                        <th>铅封费：</th>
-                        <td>CNY 30</td>
-                    </tr>
-                    <tr>
-                        <th>服务费：</th>
-                        <td>CNY 70</td>
-                    </tr>
-                    <tr>
-                        <th>护关服务费：</th>
-                        <td>CNY 70</td>
-                    </tr>
-                    <tr>
-                        <th>联单费：</th>
-                        <td>CNY 0</td>
+                        <td>RMB 70</td>
                     </tr>
                 </table>
                 <p class="zy">注：其他未列明费用请以客服告知或平台数据为准</p>

@@ -204,7 +204,7 @@
         <div class="btn_wrap" style="margin:0">
             <div class="btn_inline">
                 <ul>
-                    <li><a href="javascript:hqbj();" class="btn_login">获取报价</a></li>
+                    <li><a href="javascript:void(0);" onclick="hqbj()" class="btn_login">获取报价</a></li>
 
                 </ul>
 
@@ -317,6 +317,7 @@
 <script src="../../js/slider.js" type="text/javascript"></script>
 <script type="text/javascript" src="../../js/jquery.hDialog.min.js"></script>
 <script type="text/javascript" src="../../js/laydate/laydate.js"></script>
+<script src=""
 <script type="text/javascript">
     $(function () {
         //执行多个日历
@@ -366,11 +367,20 @@
 
         });
 
-
+</script>
+<script>
         function hqbj() {
-            window.location.href="/addPrice";
-        };
 
+            var s = $('#s').prop('checked');
+            var z = $('#z').prop('checked');
+            var zl = $('#zl').val();
+            if (zl<50) {
+                $('#zl').css("color","red");
+                layer.msg("重量不能低于50kg");
+            }else {
+                window.location.href="/addPrice?s="+s+"&z="+z+"&zl="+zl+"";
+            }
+        }
 
 </script>
 </body>
