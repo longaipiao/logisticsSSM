@@ -1,11 +1,16 @@
 package com.zking.ssm.service.impl;
 
+import com.zking.ssm.mapper.PriceMapper;
 import com.zking.ssm.model.Price;
 import com.zking.ssm.service.PriceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("priceService")
 public class PriceServiceImpl implements PriceService {
+
+    @Autowired
+    private PriceMapper priceMapper;
 
     @Override
     public int deleteByPrimaryKey(String pid) {
