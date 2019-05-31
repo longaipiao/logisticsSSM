@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.User;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface UserMapper {
+public interface UserService {
     int deleteByPrimaryKey(Integer uid);
 
     int insert(User record);

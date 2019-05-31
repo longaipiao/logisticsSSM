@@ -1,10 +1,8 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Line;
-import org.springframework.stereotype.Service;
 
-@Service
-public interface LineMapper {
+public interface LineService {
     int deleteByPrimaryKey(String lid);
 
     int insert(Line record);

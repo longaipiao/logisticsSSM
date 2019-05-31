@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Price;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface PriceMapper {
+public interface PriceService {
     int deleteByPrimaryKey(String pid);
 
     int insert(Price record);

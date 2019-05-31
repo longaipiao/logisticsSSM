@@ -188,11 +188,6 @@
             <div class="fr_reg_con">
                 <ul class="ul_reg_input">
                     <li class="title">货物明细</li>
-                    <li><b class="b2">总体积(m³):</b>
-                        <div class="length_r">
-                            <input type="text" class="input_reg" placeholder="请输入总体积" />
-                        </div>
-                    </li>
                     <li><b class="b2">总重量(kg):</b>
                         <div class="length_r">
                             <input type="text" class="input_reg" placeholder="请输入总重量" />
@@ -207,7 +202,6 @@
             <div class="btn_inline">
                 <ul>
                     <li> <a href="2_quotation.jsp" class="btn_login">获取报价</a> </li>
-
 
                 </ul>
 

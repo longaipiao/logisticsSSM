@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Role;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface RoleMapper {
+public interface RoleService {
     int deleteByPrimaryKey(String rid);
 
     int insert(Role record);

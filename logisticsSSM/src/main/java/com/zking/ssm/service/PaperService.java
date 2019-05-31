@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Paper;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface PaperMapper {
+public interface PaperService {
     int deleteByPrimaryKey(String pid);
 
     int insert(Paper record);

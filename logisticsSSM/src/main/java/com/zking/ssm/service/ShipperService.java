@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Shipper;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface ShipperMapper {
+public interface ShipperService {
     int deleteByPrimaryKey(String sid);
 
     int insert(Shipper record);

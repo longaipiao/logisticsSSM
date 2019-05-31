@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Order;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface OrderMapper {
+public interface OrderService {
     int deleteByPrimaryKey(String oid);
 
     int insert(Order record);

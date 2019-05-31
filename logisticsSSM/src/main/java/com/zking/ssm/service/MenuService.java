@@ -1,10 +1,8 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Menu;
-import org.springframework.stereotype.Service;
 
-@Service
-public interface MenuMapper {
+public interface MenuService {
     int deleteByPrimaryKey(String mid);
 
     int insert(Menu record);

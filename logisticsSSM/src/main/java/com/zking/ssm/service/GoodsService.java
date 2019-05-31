@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Goods;
-import org.springframework.stereotype.Service;
 
-@Service
-public interface GoodsMapper {
+
+public interface GoodsService {
     int deleteByPrimaryKey(String gid);
 
     int insert(Goods record);

@@ -1,10 +1,9 @@
-package com.zking.ssm.mapper;
+package com.zking.ssm.service;
 
 import com.zking.ssm.model.Vehicle;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface VehicleMapper {
+public interface VehicleService {
     int deleteByPrimaryKey(String vid);
 
     int insert(Vehicle record);
