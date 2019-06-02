@@ -1,6 +1,8 @@
 package com.zking.ssm.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Menu implements Serializable {
     private String mid;
@@ -20,6 +22,19 @@ public class Menu implements Serializable {
     private Integer spread;
 
     private Integer ordernum;
+    private List<Menu> menuList=new ArrayList<>();
+
+    public List<Menu> getMenuList() {
+        return menuList;
+    }
+
+    public void setMenuList(List<Menu> menuList) {
+        this.menuList = menuList;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     private static final long serialVersionUID = 1L;
 
@@ -93,5 +108,21 @@ public class Menu implements Serializable {
 
     public void setOrdernum(Integer ordernum) {
         this.ordernum = ordernum;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "mid='" + mid + '\'' +
+                ", mname='" + mname + '\'' +
+                ", mtype='" + mtype + '\'' +
+                ", pid='" + pid + '\'' +
+                ", icons='" + icons + '\'' +
+                ", href='" + href + '\'' +
+                ", perms='" + perms + '\'' +
+                ", spread=" + spread +
+                ", ordernum=" + ordernum +
+                ", menuList=" + menuList +
+                '}';
     }
 }

@@ -1,32 +1,36 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
 package com.zking.ssm.service;
 
 import com.zking.ssm.model.Emp;
 import com.zking.ssm.model.Menu;
-
 import java.util.List;
 
-
 public interface EmpService {
+    int deleteByPrimaryKey(String var1);
 
-    int deleteByPrimaryKey(String eid);
+    int insert(Emp var1);
 
-    int insert(Emp record);
+    int insertSelective(Emp var1);
 
-    int insertSelective(Emp record);
+    Emp selectByPrimaryKey(String var1);
 
-    Emp selectByPrimaryKey(String eid);
+    int updateByPrimaryKeySelective(Emp var1);
 
-    int updateByPrimaryKeySelective(Emp record);
+    int updateByPrimaryKey(Emp var1);
 
-    int updateByPrimaryKey(Emp record);
+    Emp loginEmp(Emp var1);
 
-    /**
-     * 后台登录方法
-     * @param emp
-     * @return
-     */
-    Emp loginEmp(Emp emp);
+    List<Menu> getMens(String var1);
 
+    List<Emp> getEmps(String var1);
 
+    int addEmp(Emp var1);
 
+    int getMaxeid();
+
+    int addER(Integer var1);
 }

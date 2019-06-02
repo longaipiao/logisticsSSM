@@ -60,8 +60,8 @@
         <div class="layui-side-scroll">
             <div class="kit-side-fold"><i class="fa fa-navicon" aria-hidden="true"></i></div>
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree" lay-filter="kitNavbar" kit-navbar>
-                <li class="layui-nav-item layui-nav-itemed">
+            <ul class="layui-nav layui-nav-tree" lay-filter="demo" kit-navbar>
+                <%--<li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 员工管理</span></a>
                     <dl class="layui-nav-child">
                         <dd>
@@ -177,14 +177,18 @@
                                data-options="{url:'app.html',icon:'&#xe658;',title:'App',id:'8'}"><i class="layui-icon">&#xe658;</i><span> app.js主入口</span></a>
                         </dd>
                     </dl>
-                </li>
+                </li>--%>
             </ul>
         </div>
     </div>
-    <div class="layui-body" id="container">
-        <!-- 内容主体区域 -->
-        <div style="padding: 15px;"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop">&#xe63e;</i>
-            请稍等...
+    <div class="layui-body">
+        <div class="layui-tab layui-tab-card" lay-allowclose="true" lay-filter="demo">
+            <!-- 内容主体区域 -->
+            <ul class="layui-tab-title">
+                <%--<li class="layui-this">首页</li>--%>
+            </ul>
+            <div class="layui-tab-content" style="height: 800px;">
+            </div>
         </div>
     </div>
 
@@ -200,6 +204,8 @@
       document.write(unescape("%3Cspan id='cnzz_stat_icon_1264021086'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1264021086%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
   </script> -->
 <script src="./plugins/layui/layui.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/ht/index.js"></script>
 <script>
     var message;
     layui.config({

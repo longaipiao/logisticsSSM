@@ -94,4 +94,19 @@ public class Emp implements Serializable {
     public void setElevel(Integer elevel) {
         this.elevel = elevel;
     }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "eid='" + eid + '\'' +
+                ", ename='" + ename + '\'' +
+                ", epassword='" + epassword + '\'' +
+                ", esex='" + esex + '\'' +
+                ", regtime='" + regtime + '\'' +
+                ", state=" + state +
+                ", eaddress='" + eaddress + '\'' +
+                ", etel='" + etel + '\'' +
+                ", elevel=" + elevel +
+                '}';
+    }
 }

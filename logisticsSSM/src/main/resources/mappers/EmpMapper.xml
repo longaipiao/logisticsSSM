@@ -16,12 +16,12 @@
     eid, ename, epassword, esex, regtime, state, eaddress, etel, elevel
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_emp
     where eid = #{eid,jdbcType=VARCHAR}
   </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_emp
     where eid = #{eid,jdbcType=VARCHAR}
   </delete>
@@ -138,4 +138,40 @@
       elevel = #{elevel,jdbcType=INTEGER}
     where eid = #{eid,jdbcType=VARCHAR}
   </update>
+
+
+  <select id="loginEmp" parameterType="com.zking.ssm.model.Emp" resultType="com.zking.ssm.model.Emp">
+              select *
+                   from t_emp
+              where ename=#{ename}
+  </select>
+
+  <!--根据用户找到用户权限-->
+  <select id="getMens" parameterType="String" resultType="com.zking.ssm.model.Menu">
+              SELECT m.*
+                    from t_emp e,t_role r,t_emp_role er,t_menu m,t_role_menu rm
+              where e.eid=#{eid} AND e.eid=er.eid AND r.rid=er.rid AND m.mid=rm.mid and rm.rid=er.rid
+   </select>
+
+  <!--    根据地域找到所有员工-->
+  <select id="getEmps"  parameterType="string" resultType="com.zking.ssm.model.Emp">
+             select *
+                  from t_emp
+             where eaddress=#{eaddress} order by elevel asc
+    </select>
+
+
+  <!--  增加员工-->
+  <insert id="addEmp" parameterType="com.zking.ssm.model.Emp">
+            insert  into
+                        t_emp
+            values (#{eid},#{ename},#{epassword},#{esex},#{eaddress},#{regtime},1,#{etel},#{elevel})
+  </insert>
+
+  <!--  获取最大值的eid-->
+  <select id="getMaxeid" resultType="integer">
+           select MAX(elevel) from t_emp
+  </select>
+
+
 </mapper>
