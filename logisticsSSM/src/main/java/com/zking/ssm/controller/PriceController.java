@@ -42,7 +42,9 @@ public class PriceController {
 
         HttpSession session = request.getSession();
 //        User user =(User) session.getAttribute("user");
-        Price price = new Price(id, 001, zl, a, fuwu, money);
+        Price price1 = priceService.selectByPrimaryKey("123456");
+        System.out.println("price1 = " + price1);
+        Price price = new Price(id, 2, zl, a, fuwu, money);
         System.out.println("price = " + price);
         int i = priceService.insert(price);
         System.out.println("i = " + i);

@@ -27,11 +27,6 @@ public interface EmpService {
      */
     Emp loginEmp(Emp emp);
 
-    /**
-     * 根据用户id获取权限以及菜单
-     * @param emp
-     * @return
-     */
-    List<Menu> getMens(Emp emp);
+
 
 }
