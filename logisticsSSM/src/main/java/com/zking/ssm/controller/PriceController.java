@@ -1,12 +1,16 @@
 package com.zking.ssm.controller;
 
+import com.zking.ssm.model.Price;
+import com.zking.ssm.model.User;
 import com.zking.ssm.service.PriceService;
+import com.zking.ssm.util.IdGeneratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class PriceController {
@@ -33,8 +37,15 @@ public class PriceController {
         int a=5*n;
         money+=a;
 
+        IdGeneratorUtils aa = new IdGeneratorUtils();
+        String id = aa.nextId();
 
-
+        HttpSession session = request.getSession();
+//        User user =(User) session.getAttribute("user");
+        Price price = new Price(id, 001, zl, a, fuwu, money);
+        System.out.println("price = " + price);
+        int i = priceService.insert(price);
+        System.out.println("i = " + i);
 
 
         model.addAttribute("money",money);
