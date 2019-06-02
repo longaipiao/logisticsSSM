@@ -9,7 +9,7 @@ public class Price implements Serializable {
 
     private String pweight;
 
-    private String landfreight;
+    private Integer landfreight;
 
     private Integer servicefee;
 
@@ -45,12 +45,12 @@ public class Price implements Serializable {
         this.pweight = pweight == null ? null : pweight.trim();
     }
 
-    public String getLandfreight() {
+    public Integer getLandfreight() {
         return landfreight;
     }
 
-    public void setLandfreight(String landfreight) {
-        this.landfreight = landfreight == null ? null : landfreight.trim();
+    public void setLandfreight(Integer landfreight) {
+        this.landfreight = landfreight;
     }
 
     public Integer getServicefee() {
@@ -83,5 +83,42 @@ public class Price implements Serializable {
 
     public void setPstate(Integer pstate) {
         this.pstate = pstate;
+    }
+
+    public Price() {
+    }
+
+    public Price(String pid, Integer uid, String pweight, Integer landfreight, Integer servicefee, Integer totalmoney, String payment, Integer pstate) {
+        this.pid = pid;
+        this.uid = uid;
+        this.pweight = pweight;
+        this.landfreight = landfreight;
+        this.servicefee = servicefee;
+        this.totalmoney = totalmoney;
+        this.payment = payment;
+        this.pstate = pstate;
+    }
+
+    @Override
+    public String toString() {
+        return "Price{" +
+                "pid='" + pid + '\'' +
+                ", uid=" + uid +
+                ", pweight='" + pweight + '\'' +
+                ", landfreight=" + landfreight +
+                ", servicefee=" + servicefee +
+                ", totalmoney=" + totalmoney +
+                ", payment='" + payment + '\'' +
+                ", pstate=" + pstate +
+                '}';
+    }
+
+    public Price(String pid, Integer uid, String pweight, Integer landfreight, Integer servicefee, Integer totalmoney) {
+        this.pid = pid;
+        this.uid = uid;
+        this.pweight = pweight;
+        this.landfreight = landfreight;
+        this.servicefee = servicefee;
+        this.totalmoney = totalmoney;
     }
 }

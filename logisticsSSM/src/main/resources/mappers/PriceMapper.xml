@@ -5,7 +5,7 @@
     <id column="pid" property="pid" jdbcType="VARCHAR" />
     <result column="uid" property="uid" jdbcType="INTEGER" />
     <result column="pweight" property="pweight" jdbcType="VARCHAR" />
-    <result column="landfreight" property="landfreight" jdbcType="VARCHAR" />
+    <result column="landfreight" property="landfreight" jdbcType="INTEGER" />
     <result column="servicefee" property="servicefee" jdbcType="INTEGER" />
     <result column="totalmoney" property="totalmoney" jdbcType="INTEGER" />
     <result column="payment" property="payment" jdbcType="VARCHAR" />
@@ -25,12 +25,10 @@
     where pid = #{pid,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zking.ssm.model.Price" >
-    insert into t_price (pid, uid, pweight, 
-      landfreight, servicefee, totalmoney, 
-      payment, pstate)
-    values (#{pid,jdbcType=VARCHAR}, #{uid,jdbcType=INTEGER}, #{pweight,jdbcType=VARCHAR}, 
-      #{landfreight,jdbcType=VARCHAR}, #{servicefee,jdbcType=INTEGER}, #{totalmoney,jdbcType=INTEGER}, 
-      #{payment,jdbcType=VARCHAR}, #{pstate,jdbcType=INTEGER})
+    insert into t_price (pid, uid, pweight,
+      landfreight, servicefee, totalmoney)
+    values (#{pid,jdbcType=VARCHAR}, #{uid,jdbcType=INTEGER}, #{pweight,jdbcType=VARCHAR},
+      #{landfreight,jdbcType=INTEGER}, #{servicefee,jdbcType=INTEGER}, #{totalmoney,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.zking.ssm.model.Price" >
     insert into t_price
@@ -71,7 +69,7 @@
         #{pweight,jdbcType=VARCHAR},
       </if>
       <if test="landfreight != null" >
-        #{landfreight,jdbcType=VARCHAR},
+        #{landfreight,jdbcType=INTEGER},
       </if>
       <if test="servicefee != null" >
         #{servicefee,jdbcType=INTEGER},
@@ -97,7 +95,7 @@
         pweight = #{pweight,jdbcType=VARCHAR},
       </if>
       <if test="landfreight != null" >
-        landfreight = #{landfreight,jdbcType=VARCHAR},
+        landfreight = #{landfreight,jdbcType=INTEGER},
       </if>
       <if test="servicefee != null" >
         servicefee = #{servicefee,jdbcType=INTEGER},
@@ -118,7 +116,7 @@
     update t_price
     set uid = #{uid,jdbcType=INTEGER},
       pweight = #{pweight,jdbcType=VARCHAR},
-      landfreight = #{landfreight,jdbcType=VARCHAR},
+      landfreight = #{landfreight,jdbcType=INTEGER},
       servicefee = #{servicefee,jdbcType=INTEGER},
       totalmoney = #{totalmoney,jdbcType=INTEGER},
       payment = #{payment,jdbcType=VARCHAR},

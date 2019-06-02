@@ -17,32 +17,32 @@ public class EmpServiecImpl implements EmpService {
 
     @Override
     public int deleteByPrimaryKey(String eid) {
-        return 0;
+        return empMapper.deleteByPrimaryKey(eid);
     }
 
     @Override
     public int insert(Emp record) {
-        return 0;
+        return empMapper.insert(record);
     }
 
     @Override
     public int insertSelective(Emp record) {
-        return 0;
+        return empMapper.insertSelective(record);
     }
 
     @Override
     public Emp selectByPrimaryKey(String eid) {
-        return null;
+        return empMapper.selectByPrimaryKey(eid);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Emp record) {
-        return 0;
+        return empMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Emp record) {
-        return 0;
+        return empMapper.updateByPrimaryKey(record);
     }
 
 

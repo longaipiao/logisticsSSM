@@ -14,6 +14,7 @@
     <link href="../../css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="../../css/input.css" rel="stylesheet" type="text/css"/>
     <link href="../../css/animate.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/admin/plugins/layui/css/layui.css"type="text/css"/>
     <script type="text/javascript" src="../../js/jquery.1.7.2.min.js"></script>
     <script type="text/javascript" src="../../js/customer2.js"></script>
     <script type="text/javascript" src="../../js/verify.js"></script>
@@ -193,7 +194,7 @@
                     <li class="title">货物明细</li>
                     <li><b class="b2">总重量(kg):</b>
                         <div class="length_r">
-                            <input id="zl" type="text" class="input_reg" placeholder="请输入总重量"/>
+                            <input id="zl" type="text" onfocus="yanse()" class="input_reg" placeholder="请输入总重量"/>
                         </div>
                     </li>
                     <li></li>
@@ -317,7 +318,7 @@
 <script src="../../js/slider.js" type="text/javascript"></script>
 <script type="text/javascript" src="../../js/jquery.hDialog.min.js"></script>
 <script type="text/javascript" src="../../js/laydate/laydate.js"></script>
-<script src=""
+<script src="/admin/plugins/layui/layui.all.js"></script>
 <script type="text/javascript">
     $(function () {
         //执行多个日历
@@ -380,6 +381,9 @@
             }else {
                 window.location.href="/addPrice?s="+s+"&z="+z+"&zl="+zl+"";
             }
+        }
+        function yanse() {
+            $('#zl').css("color","black");
         }
 
 </script>
