@@ -87,7 +87,8 @@ public class AdminController {
         int maxeid = empService.getMaxeid();
         //开始调用增加方法
         if(maxeid>0) {
-//            emp.setElevel();
+            emp.setElevel(maxeid+1);
+            emp.setEid(String.valueOf(maxeid+1));
             int i = empService.addEmp(emp);
             if(i>0){
                 //开始增加角色

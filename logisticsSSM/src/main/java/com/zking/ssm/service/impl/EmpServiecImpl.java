@@ -115,8 +115,10 @@ public class EmpServiecImpl implements EmpService {
         return this.empMapper.getMaxeid();
     }
 
+
+
     @Override
-    public int addER(Integer var1) {
-        return 0;
+    public int addER(Integer eid,Integer rid) {
+        return empMapper.addER(eid, rid);
     }
 }
