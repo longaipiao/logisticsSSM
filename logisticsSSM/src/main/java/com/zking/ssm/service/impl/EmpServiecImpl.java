@@ -45,13 +45,5 @@ public class EmpServiecImpl implements EmpService {
         return 0;
     }
 
-    @Override
-    public Emp loginEmp(Emp emp) {
-        return empMapper.loginEmp(emp);
-    }
 
-    @Override
-    public List<Menu> getMens(Emp emp) {
-        return null;
-    }
 }

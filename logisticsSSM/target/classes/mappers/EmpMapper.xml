@@ -21,7 +21,7 @@
     from t_emp
     where eid = #{eid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_emp
     where eid = #{eid,jdbcType=VARCHAR}
   </delete>

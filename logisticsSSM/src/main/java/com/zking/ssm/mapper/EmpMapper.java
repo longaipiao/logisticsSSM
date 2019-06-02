@@ -17,12 +17,7 @@ public interface EmpMapper {
 
     int updateByPrimaryKey(Emp record);
 
-    /**
-     * 后台登录方法
-     * @param emp
-     * @return
-     */
-    Emp loginEmp(Emp emp);
+
 
 
 }

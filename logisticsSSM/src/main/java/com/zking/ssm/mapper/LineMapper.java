@@ -3,6 +3,8 @@ package com.zking.ssm.mapper;
 import com.zking.ssm.model.Line;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface LineMapper {
     int deleteByPrimaryKey(String lid);
@@ -16,4 +18,12 @@ public interface LineMapper {
     int updateByPrimaryKeySelective(Line record);
 
     int updateByPrimaryKey(Line record);
+
+    /**
+     * 根据始发地和目的地查询铁路路线的信息
+     * @return
+     */
+    List<Line> getLineAll(Line line);
+
+
 }

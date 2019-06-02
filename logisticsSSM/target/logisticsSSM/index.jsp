@@ -16,6 +16,7 @@
     <script type="text/javascript" src="js/jquery.1.7.2.min.js"></script>
     <script type="text/javascript" src="js/customer2.js"></script>
     <script type="text/javascript" src="js/verify.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 <div class="bg_fff">
@@ -174,12 +175,17 @@
             </a> </li>
         </ul>
         <div class="wrap_fast">
-            <div class="fast_booking mTop_50">
+            <form action="/line" method="post">
+                <div class="fast_booking mTop_50">
                 <h3>快速订航</h3>
-                <input class="input_fast mTop_50" type="text" value="始发地" onblur="if(this.value==''){this.value='始发地';this.style.color='#333';}" onfocus="if(this.value=='始发地'){this.value='';this.style.color='#333';}"/>
-                <input class="input_fast mTop_32" type="text" value="目的地" onblur="if(this.value==''){this.value='目的地';this.style.color='#333';}" onfocus="if(this.value=='目的地'){this.value='';this.style.color='#333';}"/>
-                <a href="pages/05_railway_class/railway_class.jsp" class="a_btn_A mTop_32">快速订航</a> </div>
-            <div class="map_fast_booking"> <img src="images/map_fast_booking.png" alt=""/> </div>
+                <em style="font-size: 18px;" >始发地：</em>
+                <input id="lstart" name="lstart" class="input_fast mTop_50" type="text"/>
+                <em style="font-size: 18px;">始发地：</em>
+                <input id="lend" name="lend" class="input_fast mTop_32" type="text" />
+                    <input type="submit" class="a_btn_A mTop_32" value="快速订航"/>
+                <%--<a href="javasrciopt:;" id="ksdh" ></a> --%></div>
+                <div class="map_fast_booking"> <img src="images/map_fast_booking.png" alt=""/> </div>
+            </form>
         </div>
     </div>
     <div class="bg_f4 mTop_80">
