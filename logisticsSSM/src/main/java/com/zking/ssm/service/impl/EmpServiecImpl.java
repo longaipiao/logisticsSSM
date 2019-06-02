@@ -45,5 +45,10 @@ public class EmpServiecImpl implements EmpService {
         return empMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public Emp loginEmp(Emp emp) {
+        return null;
+    }
+
 
 }
