@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -30,9 +29,17 @@ public class PriceController {
             money+=50;
             fuwu+=50;
         }
-        if(zl.equals("")){
-            money+=250;
-        }
+        int n=Integer.parseInt(zl);
+        int a=5*n;
+        money+=a;
+
+
+
+
+
+        model.addAttribute("money",money);
+        model.addAttribute("fuwu",fuwu);
+        model.addAttribute("yunfei",a);
 
         return "/pages/05_railway_class/2_quotation.jsp";
     }
