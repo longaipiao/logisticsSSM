@@ -84,4 +84,18 @@ public class User implements Serializable {
     public void setHeadportrait(String headportrait) {
         this.headportrait = headportrait == null ? null : headportrait.trim();
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", uname='" + uname + '\'' +
+                ", upassword='" + upassword + '\'' +
+                ", email='" + email + '\'' +
+                ", dateofbirth='" + dateofbirth + '\'' +
+                ", usex='" + usex + '\'' +
+                ", utel='" + utel + '\'' +
+                ", headportrait='" + headportrait + '\'' +
+                '}';
+    }
 }

@@ -48,11 +48,18 @@
       <if test="enddate != null">
         and enddate like '%${enddate}%'
       </if>
-
     </select>
 
+  <!--根据线路id查询线路信息-->
+  <select id="getLineByLid" resultType="com.zking.ssm.model.Line" parameterType="string">
+    select
+    <include refid="Base_Column_List" />
+    from t_line
+    where lid = #{lid}
+  </select>
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_line
     where lid = #{lid,jdbcType=VARCHAR}
   </delete>

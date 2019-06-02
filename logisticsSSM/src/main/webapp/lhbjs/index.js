@@ -47,11 +47,11 @@ $(function () {
             parseUserList(res,config.page);
         });
     }
-
     //解析数据，currPage参数为预留参数，当删除一行刷新列表时，可以记住当前页而不至于显示到首页去
     function parseUserList(res,currPage){
         var content = "";
         $.each(res.data, function (i, o) {
+
             content += '<div class="line_OD">';
             content += '<span>始： '+ o.lstart +' </span>';
             content += '<i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i>';
@@ -65,21 +65,16 @@ $(function () {
             content += '</div>';
             content += '<ul class="ul_btn_class">';
             content += '<li><a href="#" class="btn_B">查看路线</a></li>';
-            content += "<li class='mL'><a href='/pages/05_railway_class/1_quote.jsp' onclick='getlid(\"" +o.lid +"\")' class='btn_E'>订舱</a></li>";
+            content += "<li class='mL'><a href='/pages/05_railway_class/1_quote.jsp' onclick='getlid(\"" + o.lid +"\")' class='btn_E'>订舱</a></li>";
             content += '</ul>';
             content += '<div class="list_ps">'+o.lnote+'</div>';
         });
             $('#tbody').html(content);
     }
-
-
-
-
-
-
 });
-
+/*订航的点击事件*/
 function getlid(lid){
-    
-
+    //alert(lid);
+    $.post("/selectLid",{lid:lid},function (data) {
+    });
 }

@@ -187,14 +187,6 @@
         <%--数据的展示：--%>
         <div class="list_class clear" id="tbody">
 
-            <%--<div class="line_OD"> <span>始：DALIAN · CHINA&nbsp;大连 </span> <i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i> <span>终：UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</span> </div>
-            <div class="price_class"> <span>TON：100.00</span> <span>CBM：100.00</span> </div>
-            <div class="time_class"> <span>预计发车  2018-04-28</span> <span>截止订舱  2018-04-23</span> </div>
-            <ul class="ul_btn_class">
-                <li><a href="#" class="btn_B">查看路线</a></li>
-                <li class="mL"><a href="1_quote.jsp" class="btn_E">订舱</a></li>
-            </ul>
-            <div class="list_ps">这里面写关于航线的一些备注说明等等这里面写关于航线的一些备注说明等等</div>--%>
 
         </div>
         <%--分页放的标签--%>
