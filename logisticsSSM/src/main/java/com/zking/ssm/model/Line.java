@@ -134,4 +134,23 @@ public class Line implements Serializable {
     public void setLserial(String lserial) {
         this.lserial = lserial == null ? null : lserial.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Line{" +
+                "lid='" + lid + '\'' +
+                ", lstart='" + lstart + '\'' +
+                ", lend='" + lend + '\'' +
+                ", startdate='" + startdate + '\'' +
+                ", enddate='" + enddate + '\'' +
+                ", lnote='" + lnote + '\'' +
+                ", lweight=" + lweight +
+                ", trunksize=" + trunksize +
+                ", trains='" + trains + '\'' +
+                ", lway='" + lway + '\'' +
+                ", voyage='" + voyage + '\'' +
+                ", train='" + train + '\'' +
+                ", lserial='" + lserial + '\'' +
+                '}';
+    }
 }

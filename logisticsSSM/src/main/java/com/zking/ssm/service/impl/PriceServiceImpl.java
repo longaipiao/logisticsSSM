@@ -14,31 +14,31 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public int deleteByPrimaryKey(String pid) {
-        return 0;
+        return priceMapper.deleteByPrimaryKey(pid);
     }
 
     @Override
     public int insert(Price record) {
-        return 0;
+        return priceMapper.insert(record);
     }
 
     @Override
     public int insertSelective(Price record) {
-        return 0;
+        return priceMapper.insertSelective(record);
     }
 
     @Override
     public Price selectByPrimaryKey(String pid) {
-        return null;
+        return priceMapper.selectByPrimaryKey(pid);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Price record) {
-        return 0;
+        return priceMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Price record) {
-        return 0;
+        return priceMapper.updateByPrimaryKey(record);
     }
 }

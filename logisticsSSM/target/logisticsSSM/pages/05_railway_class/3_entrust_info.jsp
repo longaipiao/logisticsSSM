@@ -172,49 +172,13 @@
                 <tr>
                     <th>班次：</th>
                     <td>0978-005W</td>
-                    <th><span>*</span>开航日期：</th>
+                    <th><span>*</span>开车日期：</th>
                     <td>2018-04-12</td>
                 </tr>
-                <tr>
-
-                    <th>交易类型：</th>
-                    <td colspan="3"><form>
-                        <label><input class="form_radio" type="radio" name="xz" checked/>&nbsp;CIF</label>&nbsp;&nbsp;
-                        <label><input class="form_radio" type="radio" name="xz"/>&nbsp;C&F</label>
-                    </form></td>
-
-                </tr>
-            </table>
-        </div>
-
-        <h2 class="title_main mTop_40">报关信息</h2>
-
-        <div class="w_table_A">
-            <table class="table_A">
-                <colgroup>
-                    <col width="130">
-                    <col width="430">
-                    <col width="130">
-                    <col width="430">
-
-                </colgroup>
-                <tr>
-
-                    <th>报关地：</th>
-                    <td>
-                        <select class="sel_reg">
-                            <option>请选择</option>
-
-                        </select>
-
-                    </td>
-                    <th>品名数量：</th>
-                    <td><input class="input_reg" type="text" value="1"/></td>
-
-                </tr>
 
             </table>
         </div>
+
 
 
         <h2 class="title_main mTop_40">请确认您的联系信息</h2>

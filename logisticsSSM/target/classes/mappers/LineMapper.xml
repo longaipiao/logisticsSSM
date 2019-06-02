@@ -26,7 +26,33 @@
     from t_line
     where lid = #{lid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+
+
+    <!-- 根据始发地和目的地查询铁路路线的信息-->
+    <select id="getLineAll" resultType="com.zking.ssm.model.Line" parameterType="com.zking.ssm.model.Line">
+      select
+      <include refid="Base_Column_List" />
+      from t_line
+      where 1 = 1
+      <if test="lstart != null">
+        and lstart like '%${lstart}%'
+      </if>
+      <if test="lend != null">
+        and lend like '%${lend}%'
+      </if>
+
+      <if test="startdate != null">
+        and startdate like '%${startdate}%'
+      </if>
+
+      <if test="enddate != null">
+        and enddate like '%${enddate}%'
+      </if>
+
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_line
     where lid = #{lid,jdbcType=VARCHAR}
   </delete>

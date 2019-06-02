@@ -16,9 +16,15 @@
     <script type="text/javascript" src="../../js/jquery.1.7.2.min.js"></script>
     <script type="text/javascript" src="../../js/customer2.js"></script>
     <script type="text/javascript" src="../../js/verify.js"></script>
+    <script src="lhbjs/index.js"></script>
+    <!-- 以下是方法二所需要引入的js -->
+    <link type="text/css" href="/admin/plugins/layui/css/layui.css" rel="stylesheet">
+    <script type="text/javascript" src="/admin/plugins/layui/layui.all.js"></script>
+
 </head>
 <body class="bg_f4">
 <div class="bg_fff">
+
     <div class="bg_top">
         <div class="page_con">
             <ul class="func_top">
@@ -134,24 +140,42 @@
             <li style="border:none;"><a href="javascript:goTop();" class="sidetop"><i class="rs_6"></i></a></li>
         </ul>
     </div>
+
+    <%--
+     <input type="hidden" id="lstart" value="${lstart}"/>
+    <input type="hidden" id="lend" value="${lend}"/>
+    --%>
     <div class="bg_condition">
+        <form action="/line" method="post">
         <div class="page_con">
             <div class="cond_line">
-                <input type="text" class="inp_line" placeholder="起运港"/>
+                <input type="text" id="lstart" value="${lstart}" class="inp_line" placeholder="起运港"/>
                 <span class="fL">|</span>
-                <input type="text" class="inp_line" placeholder="目的港"/>
+                <input type="text" id="lend" value="${lend}" class="inp_line" placeholder="目的港"/>
             </div>
-            <div class="cond_time"> <span class="date_select fL">
-        <input type="text" placeholder="发车起始日期" class="input_B lay_t_item">
-        </span> 至 <span class="date_select fR">
-        <input type="text" placeholder="截止日期" class="input_B lay_t_item">
-        </span> </div>
-            <select class="sel_cl">
-                <option>请选择</option>
-                <option>整箱</option>
-                <option>拼箱</option>
-            </select>
-            <a href="#" class="btn_search_class fR">查询</a> </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">起始日期</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="date1" placeholder="发车起始日期">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">截止日期</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="date2" placeholder="截止日期">
+                </div>
+            </div>
+
+
+            <%--<div class="cond_time"> <span class="date_select fL">
+                <input type="text" placeholder="发车起始日期" class="input_B lay_t_item">
+                </span> 至 <span class="date_select fR">
+                <input type="text" placeholder="截止日期" class="input_B lay_t_item">
+                </span>
+            </div>--%>
+            <input type="submit" style="font-size: 28px" value="查询"/>
+            </div>
+        </form>
     </div>
     <div class="page_con">
         <ul class="header_class">
@@ -160,302 +184,22 @@
             <li class="l3">日期信息</li>
             <li class="l4">操作</li>
         </ul>
-        <div class="list_class clear">
-            <div class="co">
-                <h5>邦达天原</h5>
-            </div>
-            <div class="line_OD"> <span>始：DALIAN · CHINA&nbsp;大连 </span> <i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i> <span>终：UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</span> </div>
+        <%--数据的展示：--%>
+        <div class="list_class clear" id="tbody">
+
+            <%--<div class="line_OD"> <span>始：DALIAN · CHINA&nbsp;大连 </span> <i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i> <span>终：UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</span> </div>
             <div class="price_class"> <span>TON：100.00</span> <span>CBM：100.00</span> </div>
             <div class="time_class"> <span>预计发车  2018-04-28</span> <span>截止订舱  2018-04-23</span> </div>
             <ul class="ul_btn_class">
-                <li class="extra"> <i class="extra">附</i>
-                    <div class="potionTable">
-                        <table>
-                            <tr>
-                                <th>费用名称</th>
-                                <th>币种</th>
-                                <th>单价</th>
-                                <th>单位</th>
-                            </tr>
-                            <tr>
-                                <td>LSS(20'Gp)</td>
-                                <td>USD</td>
-                                <td>20.00</td>
-                                <td>20GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'Gp)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                        </table>
-                    </div>
-                </li>
                 <li><a href="#" class="btn_B">查看路线</a></li>
-                <li><a href="#" class="btn_D">在线咨询</a></li>
                 <li class="mL"><a href="1_quote.jsp" class="btn_E">订舱</a></li>
             </ul>
-            <div class="list_ps">这里面写关于航线的一些备注说明等等这里面写关于航线的一些备注说明等等</div>
+            <div class="list_ps">这里面写关于航线的一些备注说明等等这里面写关于航线的一些备注说明等等</div>--%>
+
         </div>
-        <div class="list_class clear">
-            <div class="co">
-                <h5>邦达天原</h5>
-            </div>
-            <div class="line_OD"> <span>始：DALIAN · CHINA&nbsp;大连 </span> <i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i> <span>终：UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</span> </div>
-            <div class="price_class"> <span>TON：100.00</span> <span>CBM：100.00</span> </div>
-            <div class="time_class"> <span>预计发车  2018-04-28</span> <span>截止订舱  2018-04-23</span> </div>
-            <ul class="ul_btn_class">
-                <li class="extra"> <i class="extra">附</i>
-                    <div class="potionTable">
-                        <table>
-                            <tr>
-                                <th>费用名称</th>
-                                <th>币种</th>
-                                <th>单价</th>
-                                <th>单位</th>
-                            </tr>
-                            <tr>
-                                <td>LSS(20'Gp)</td>
-                                <td>USD</td>
-                                <td>20.00</td>
-                                <td>20GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'Gp)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                        </table>
-                    </div>
-                </li>
-                <li><a href="#" class="btn_B">查看路线</a></li>
-                <li><a href="#" class="btn_D">在线咨询</a></li>
-                <li class="mL"><a href="1_quote.jsp" class="btn_E">订舱</a></li>
-            </ul>
-            <div class="list_ps">这里面写关于航线的一些备注说明等等这里面写关于航线的一些备注说明等等</div>
-        </div>
-        <div class="list_class clear">
-            <div class="co">
-                <h5>其他代理公司</h5>
-            </div>
-            <div class="line_OD"> <span>始：DALIAN · CHINA&nbsp;大连 </span> <i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i> <span>终：UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</span> </div>
-            <div class="price_class"> <span>TON：100.00</span> <span>CBM：100.00</span> </div>
-            <div class="time_class"> <span>预计发车  2018-04-28</span> <span>截止订舱  2018-04-23</span> </div>
-            <ul class="ul_btn_class">
-                <li class="extra"> <i class="extra">附</i>
-                    <div class="potionTable">
-                        <table>
-                            <tr>
-                                <th>费用名称</th>
-                                <th>币种</th>
-                                <th>单价</th>
-                                <th>单位</th>
-                            </tr>
-                            <tr>
-                                <td>LSS(20'Gp)</td>
-                                <td>USD</td>
-                                <td>20.00</td>
-                                <td>20GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'Gp)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                        </table>
-                    </div>
-                </li>
-                <li><a href="#" class="btn_B">查看路线</a></li>
-                <li><a href="#" class="btn_D">在线咨询</a></li>
-                <li class="mL"><a href="1_quote.jsp" class="btn_E">订舱</a></li>
-            </ul>
-            <div class="list_ps">这里面写关于航线的一些备注说明等等这里面写关于航线的一些备注说明等等</div>
-        </div>
-        <div class="list_class clear">
-            <div class="co">
-                <h5>邦达天原</h5>
-            </div>
-            <div class="line_OD"> <span>始：DALIAN · CHINA&nbsp;大连 </span> <i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i> <span>终：UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</span> </div>
-            <div class="price_class"> <span>TON：100.00</span> <span>CBM：100.00</span> </div>
-            <div class="time_class"> <span>预计发车  2018-04-28</span> <span>截止订舱  2018-04-23</span> </div>
-            <ul class="ul_btn_class">
-                <li class="extra"><i class="extra">附</i>
-                    <div class="potionTable">
-                        <table>
-                            <tr>
-                                <th>费用名称</th>
-                                <th>币种</th>
-                                <th>单价</th>
-                                <th>单位</th>
-                            </tr>
-                            <tr>
-                                <td>LSS(20'Gp)</td>
-                                <td>USD</td>
-                                <td>20.00</td>
-                                <td>20GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'Gp)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40GP</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                            <tr>
-                                <td>LSS(40'HQ)</td>
-                                <td>USD</td>
-                                <td>40.00</td>
-                                <td>40HQ</td>
-                            </tr>
-                            <tr>
-                                <td>ENS</td>
-                                <td>USD</td>
-                                <td>30.00</td>
-                                <td>票</td>
-                            </tr>
-                        </table>
-                    </div>
-                </li>
-                <li><a href="#" class="btn_B">查看路线</a></li>
-                <li><a href="#" class="btn_D">在线咨询</a></li>
-                <li class="mL"><a href="1_quote.jsp" class="btn_E">订舱</a></li>
-            </ul>
-            <div class="list_ps">这里面写关于航线的一些备注说明等等这里面写关于航线的一些备注说明等等</div>
-        </div>
+        <%--分页放的标签--%>
+        <div id="page1"></div>
+
     </div>
     <div class="wrap_login" id="dialog1">
         <div class="user_login">
@@ -573,7 +317,7 @@
 
 
     $(function(){
-    *滑动验证*/
+    /*滑动验证*/
         $('#mpanel1').slideVerify({
             type : 1,		//类型
             vOffset : 5,	//误差量，根据需求自行调整

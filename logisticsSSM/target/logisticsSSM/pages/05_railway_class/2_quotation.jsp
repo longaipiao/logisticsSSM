@@ -195,11 +195,11 @@
                 <table>
                     <tr>
                         <th>陆运费：</th>
-                        <td>RMB 750</td>
+                        <td>RMB ${yunfei}</td>
                     </tr>
                     <tr>
                         <th>服务费：</th>
-                        <td>RMB 70</td>
+                        <td>RMB ${fuwu}</td>
                     </tr>
                 </table>
                 <p class="zy">注：其他未列明费用请以客服告知或平台数据为准</p>
@@ -211,24 +211,19 @@
             <table>
                 <tr>
                     <th>费用总计</th>
-                    <td>USD</td>
-                    <td>790起&nbsp;<i href="#">?
+                    <td>RMB</td>
+                    <td>${money}&nbsp;<i href="#">?
 
                         <div class="t_to">注:待定费用未计入费用总计,届时以客服告知或rail订单数据为准</div>
                     </i></td>
 
                 </tr>
-                <tr>
-                    <th></th>
-                    <td>CNY</td>
-                    <td>1585</td>
 
-                </tr>
             </table>
             <ul class="wrap_quo">
 
                 <li>
-                    <a class="btn_C" href="3_entrust_info.jsp">立即委托</a>
+                    <a class="btn_C" href="/pages/05_railway_class/3_entrust_info.jsp">立即委托</a>
                 </li>
                 <li>
                     <a class="export">导出报价单</a>
