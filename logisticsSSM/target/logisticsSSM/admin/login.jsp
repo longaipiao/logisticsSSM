@@ -17,12 +17,12 @@
       <h2 class="kit-login-slogan">欢迎使用 <br> WBG物流管理系统后台模板</h2>
       <div class="kit-login-form">
         <h4 class="kit-login-title">登录</h4>
-        <form class="layui-form">
+        <form class="layui-form" action="/admin/login"  method="post" id="f">
           <div class="kit-login-row">
             <div class="kit-login-col">
               <i class="layui-icon">&#xe612;</i>
               <span class="kit-login-input">
-                <input type="text" name="loginName" lay-verify="required" placeholder="用户名/邮箱/手机号" />
+                <input type="text" name="ename" id="ename" lay-verify="required" placeholder="用户名/邮箱/手机号" />
               </span>
             </div>
             <div class="kit-login-col"></div>
@@ -31,7 +31,7 @@
             <div class="kit-login-col">
               <i class="layui-icon">&#xe64c;</i>
               <span class="kit-login-input">
-                <input type="password" name="password" lay-verify="required" placeholder="密码" />
+                <input type="password" name="epassword" id="epassword" lay-verify="required" placeholder="密码" />
               </span>
             </div>
             <div class="kit-login-col"></div>
@@ -54,6 +54,8 @@
 
   <script src="plugins/polyfill.min.js"></script>
   <script src="plugins/layui/layui.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script ></script>
   <script>
     layui.use(['layer', 'form'], function() {
       var form = layui.form,
@@ -64,13 +66,28 @@
       });
       //监听提交
       form.on('submit(login_hash)', function(data) {
-        layer.msg(JSON.stringify(data.field));
-        /*setTimeout(function(){
-            location.href='/';
-        },1000);*/
+        layer.msg(JSON.stringify(data.field.ename));
+       var r=document.forms[0];
+        r.submit();
 
         return false;
       });
+
+      /*$.ajax({
+        type: "post",
+        url: "/admin/login",//请求接口
+        dataType: "json",
+        contentType: "application/json",//应用类型/json,
+        data:{
+          ename:$("#ename").val()
+        },
+        success: function (json) {
+
+        },
+        error: function (jqXHR) {
+          alert("发生错误：" + jqXHR.status);
+        }
+      });*/
     });
   </script>
 </body>
