@@ -193,37 +193,23 @@
 
                 </colgroup>
                 <tr>
-
-                    <th><span>*</span>公司名称：</th>
-                    <td>
-                        <select class="sel_reg">
-                            <option>某某股份有限公司</option>
-
-                        </select>
-
-                    </td>
                     <th><span>*</span>联系人：</th>
-                    <td><input class="input_reg" type="text" value="张三"/></td>
-
-                </tr>
-                <tr>
+                    <td><input class="input_reg" type="text" value="${user.uname}"/></td>
 
                     <th><span>*</span>手机号：</th>
-                    <td><input class="input_reg" type="text" value="18718712345"/>
+                    <td><input class="input_reg" type="text" value="${user.utel}"/>
                     </td>
-                    <th>固定电话：</th>
-                    <td><input class="input_reg" type="text" placeholder="请输入固定电话"/></td>
-
                 </tr>
                 <tr>
 
                     <th>QQ：</th>
                     <td><input class="input_reg" type="text" placeholder="请输入QQ号"/>
                     </td>
-                    <th>贸易订单号：</th>
-                    <td><input class="input_reg" type="text" placeholder="本委托对应贵司的贸易订单号"/></td>
+                    <th>固定电话：</th>
+                    <td><input class="input_reg" type="text" placeholder="请输入固定电话"/></td>
 
                 </tr>
+
             </table>
 
         </div>
@@ -232,7 +218,7 @@
         <div class="btn_wrap" style="margin:0 0 20px 0">
             <div class="btn_inline">
                 <ul>
-                    <li> <a href="4_finish_quo.jsp" class="btn_login">立即委托</a> </li>
+                    <li> <a href="/addOrder" class="btn_login">立即委托</a> </li>
 
 
                 </ul>
