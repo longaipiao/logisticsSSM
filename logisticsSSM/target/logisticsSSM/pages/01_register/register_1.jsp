@@ -15,6 +15,7 @@
     <script type="text/javascript" src="../../js/jquery.1.7.2.min.js"></script>
     <script type="text/javascript" src="../../js/customer2.js"></script>
     <script type="text/javascript" src="../../js/verify.js"></script>
+    <script type="text/javascript" src="/lhbjs/userlogin.js"></script>
 </head>
 <body class="bg_f4">
 <div class="bg_fff">
@@ -82,17 +83,11 @@
             </li>
             <li><b class="b2">电子邮箱:</b>
                 <div class="length_r">
-                    <input type="text" class="input_reg warm" placeholder="请输入电子邮箱" value="123.com" />
+                    <input type="text" class="input_reg warm" placeholder="请输入电子邮箱" />
                 </div>
-                <i class="warm">请输入正确的邮箱格式</i> </li>
             <li><b class="b2">手机号码:</b>
                 <div class="length_r">
                     <input type="text" class="input_reg" placeholder="请输入手机号码" />
-                </div>
-            </li>
-            <li><b class="b2">滑动验证:</b>
-                <div class="length_r">
-                    <div id="mpanel3" ></div>
                 </div>
             </li>
             <li>
@@ -130,31 +125,23 @@
             <div class="wrap_tab">
                 <ul class="tab_title">
                     <li class="on">普通用户</li>
-                    <li>平台供应商</li>
                 </ul>
                 <div class="tab_con">
+
                     <div class="tab_con_list">
+                        <form action="/UserLogin" method="post">
                         <ul>
                             <li>
-                                <input type="text" class="input_login" placeholder="用户名"/>
+                                <input type="text" name="uname" class="input_login" placeholder="用户名"/>
                             </li>
                             <li>
-                                <input type="text" class="input_login" placeholder="密码"/>
+                                <input type="text" name="upassword" class="input_login" placeholder="密码"/>
                             </li>
                         </ul>
                         <div id="mpanel1" > </div>
-                        <a href="#" class="btn_login">登录</a> </div>
-                    <div class="tab_con_list">
-                        <ul>
-                            <li>
-                                <input type="text" class="input_login" placeholder="用户名"/>
-                            </li>
-                            <li>
-                                <input type="text" class="input_login" placeholder="密码"/>
-                            </li>
-                        </ul>
-                        <div id="mpanel2" > </div>
-                        <a href="#" class="btn_login">登录</a> </div>
+                        <input type="submit" style="font-size: 20px; align-content: center" class="btn_login" value="登录"> </form>
+                    </div>
+
                 </div>
             </div>
         </div>

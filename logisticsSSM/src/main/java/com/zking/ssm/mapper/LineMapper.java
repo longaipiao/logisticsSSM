@@ -25,5 +25,10 @@ public interface LineMapper {
      */
     List<Line> getLineAll(Line line);
 
+    /**
+     * 根据线路id查询线路信息
+     */
+    List<Line> getLineByLid(String lid);
+
 
 }

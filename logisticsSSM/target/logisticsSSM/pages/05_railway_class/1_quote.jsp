@@ -19,6 +19,7 @@
     <script type="text/javascript" src="../../js/customer2.js"></script>
     <script type="text/javascript" src="../../js/verify.js"></script>
     <script type="text/javascript" src="../../js/input.js"></script>
+    <script type="text/javascript" src="/lhbjs/quote.js"></script>
 </head>
 <body class="bg_f4">
 <div class="bg_fff">
@@ -149,20 +150,9 @@
             <li><i>4</i>完成</li>
         </ul>
     </div>
-    <div class="bg_class_cu">
-        <div class="voyage">航程：33天</div>
-        <ul class="line_cu">
-            <li>DALIAN · CHINA&nbsp;大连</li>
-            <li class="sorrow"></li>
-            <li>UST-LUGA · Russian Federation&nbsp;乌斯特鲁加</li>
-        </ul>
-        <ul class="line_cu_info">
-            <li>承运人：某某铁运</li>
-            <li>中转方式：直达</li>
-            <li>预计发车日期：2018-04-12</li>
-            <li>车名／班次：TOLEDO TRIUMPH/0978-005w</li>
-            <li>路线代码：FAL6</li>
-        </ul>
+    <%--数据绑定--%>
+    <div class="bg_class_cu" id="quote">
+
     </div>
     <div class="bg_com pTB_40 clear">
         <div class="page_inline">

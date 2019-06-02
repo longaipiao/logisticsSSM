@@ -28,6 +28,12 @@ public class LineController {
     @Autowired
     private LineService lineService;
 
+    /**
+     * 查询跳转方法
+     * @param line
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/line")
     public String getjsp(Line line,HttpServletRequest request){
         System.out.println("进入了======");
@@ -36,7 +42,7 @@ public class LineController {
         return "pages/05_railway_class/railway_class.jsp";
     }
 
-
+    //实现查询路线的方法
     @RequestMapping(value = "/linelist")
     @ResponseBody
     public Map<String, Object> getLine(Line line,Integer page,Integer pageSize) throws ServletException, IOException {
@@ -53,5 +59,35 @@ public class LineController {
         //request.getRequestDispatcher("pages/05_railway_class/railway_class.jsp").forward(request,response);
         return resultMap;
     }
+
+    /**
+     * 根据线路id查询   订航
+     */
+    @RequestMapping(value = "/selectLid")
+    public String getLid(String lid,HttpServletRequest request){
+        System.out.println("进入了我的地界，嘻嘻嘻！！");
+        //System.out.println("lid是："+lid);
+        request.getSession().setAttribute("lid",lid);
+        return "";
+    }
+
+    /**
+     * 订航信息单条数据
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/findLid")
+    @ResponseBody
+    public List<Line> getLineLid(HttpServletRequest request){
+        String lid = (String) request.getSession().getAttribute("lid");
+        List<Line> lineByLid = lineService.getLineByLid(lid);
+        return lineByLid;
+    }
+
+
+
+
+
+
 
 }

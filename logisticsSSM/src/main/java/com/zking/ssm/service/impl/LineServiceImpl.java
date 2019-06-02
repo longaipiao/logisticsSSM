@@ -70,4 +70,11 @@ public class LineServiceImpl implements LineService {
         List<Line> lines = lineMapper.getLineAll(line);
         return new PageInfo<>(lines);
     }
+    /**
+     * 根据线路id查询线路信息
+     */
+    @Override
+    public List<Line> getLineByLid(String lid) {
+        return lineMapper.getLineByLid(lid);
+    }
 }

@@ -28,4 +28,8 @@ public interface LineService {
     //List<Line> getLineAll(Line line);
     PageInfo<Line> getLineAll(Line line, Integer page, Integer pageSize);
 
+    /**
+     * 根据线路id查询线路信息
+     */
+    List<Line> getLineByLid(String lid);
 }
