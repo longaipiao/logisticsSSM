@@ -6,6 +6,8 @@ import com.zking.ssm.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("orderService")
 public class OrderServiceImpl implements OrderService {
 
@@ -40,5 +42,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public int updateByPrimaryKey(Order record) {
         return orderMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<Order> selectByUid(Integer uid) {
+        return orderMapper.selectByUid(uid
+        );
     }
 }

@@ -114,4 +114,34 @@ public class Shipper implements Serializable {
     public void setSnote(String snote) {
         this.snote = snote == null ? null : snote.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Shipper{" +
+                "sid='" + sid + '\'' +
+                ", sname='" + sname + '\'' +
+                ", pingyinsname='" + pingyinsname + '\'' +
+                ", rid='" + rid + '\'' +
+                ", stel='" + stel + '\'' +
+                ", pickdate='" + pickdate + '\'' +
+                ", quantity=" + quantity +
+                ", saddress='" + saddress + '\'' +
+                ", sdate='" + sdate + '\'' +
+                ", goodname='" + goodname + '\'' +
+                ", snote='" + snote + '\'' +
+                '}';
+    }
+
+    public Shipper() {
+    }
+
+    public Shipper(String sid, String sname, String stel, Integer quantity, String saddress, String goodname, String snote) {
+        this.sid = sid;
+        this.sname = sname;
+        this.stel = stel;
+        this.quantity = quantity;
+        this.saddress = saddress;
+        this.goodname = goodname;
+        this.snote = snote;
+    }
 }

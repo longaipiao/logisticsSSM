@@ -121,4 +121,14 @@ public class Price implements Serializable {
         this.servicefee = servicefee;
         this.totalmoney = totalmoney;
     }
+
+    public Price(String pid, Integer uid, String pweight, Integer landfreight, Integer servicefee, Integer totalmoney, Integer pstate) {
+        this.pid = pid;
+        this.uid = uid;
+        this.pweight = pweight;
+        this.landfreight = landfreight;
+        this.servicefee = servicefee;
+        this.totalmoney = totalmoney;
+        this.pstate = pstate;
+    }
 }

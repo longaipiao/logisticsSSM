@@ -149,4 +149,8 @@
       thstate = #{thstate,jdbcType=INTEGER}
     where oid = #{oid,jdbcType=VARCHAR}
   </update>
+
+
+
+
 </mapper>

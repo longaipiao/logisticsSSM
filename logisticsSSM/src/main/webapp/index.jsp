@@ -179,9 +179,9 @@
                 <div class="fast_booking mTop_50">
                 <h3>快速订航</h3>
                 <em style="font-size: 18px;" >始发地：</em>
-                <input id="lstart" name="lstart" class="input_fast mTop_50" type="text"/>
-                <em style="font-size: 18px;">始发地：</em>
-                <input id="lend" name="lend" class="input_fast mTop_32" type="text" />
+                <input id="lstart" name="lstart" class="input_fast mTop_50" type="text" placeholder="请输入始发地"/>
+                <em style="font-size: 18px;">目的地：</em>
+                <input id="lend" name="lend" class="input_fast mTop_32" type="text" placeholder="请输入目的地" />
                     <input type="submit" class="a_btn_A mTop_32" value="快速订航"/>
                 <%--<a href="javasrciopt:;" id="ksdh" ></a> --%></div>
                 <div class="map_fast_booking"> <img src="images/map_fast_booking.png" alt=""/> </div>

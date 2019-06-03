@@ -17,6 +17,8 @@ public class PriceController {
 
     @Autowired
     private PriceService priceService;
+    @Autowired
+    private IdGeneratorUtils idGeneratorUtils;
 
     @RequestMapping("/addPrice")
     public String addPrice(HttpServletRequest request, Model model){
@@ -37,13 +39,15 @@ public class PriceController {
         int a=5*n;
         money+=a;
 
-        IdGeneratorUtils aa = new IdGeneratorUtils();
-        String id = aa.nextId();
+//        IdGeneratorUtils aa = new IdGeneratorUtils();
+        String id = idGeneratorUtils.nextId();
 
         HttpSession session = request.getSession();
-//        User user =(User) session.getAttribute("user");
-        Price price = new Price(id, 2, zl, a, fuwu, money);
+        User user =(User) session.getAttribute("user");
+        Price price = new Price(id, 2, zl, a, fuwu, money,0);
         int i = priceService.insert(price);
+
+        session.setAttribute("price",price);
 
         model.addAttribute("money",money);
         model.addAttribute("fuwu",fuwu);

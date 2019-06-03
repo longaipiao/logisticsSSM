@@ -36,7 +36,6 @@ public class LineController {
      */
     @RequestMapping(value = "/line")
     public String getjsp(Line line,HttpServletRequest request){
-        System.out.println("进入了======");
         request.getSession().setAttribute("lstart",line.getLstart());
         request.getSession().setAttribute("lend",line.getLend());
         return "pages/05_railway_class/railway_class.jsp";
@@ -46,7 +45,6 @@ public class LineController {
     @RequestMapping(value = "/linelist")
     @ResponseBody
     public Map<String, Object> getLine(Line line,Integer page,Integer pageSize) throws ServletException, IOException {
-        System.out.println("我喜欢你你啊");
         Map<String, Object> resultMap = new HashMap<String, Object>();
         PageInfo<Line> pager = lineService.getLineAll(line, page, pageSize);
         //List<Line> lines = lineService.getLineAll(line);
@@ -65,7 +63,6 @@ public class LineController {
      */
     @RequestMapping(value = "/selectLid")
     public String getLid(String lid,HttpServletRequest request){
-        System.out.println("进入了我的地界，嘻嘻嘻！！");
         //System.out.println("lid是："+lid);
         request.getSession().setAttribute("lid",lid);
         return "";
