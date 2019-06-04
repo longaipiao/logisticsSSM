@@ -51,7 +51,6 @@ $(function () {
     function parseUserList(res,currPage){
         var content = "";
         $.each(res.data, function (i, o) {
-
             content += '<div class="line_OD">';
             content += '<span>始： '+ o.lstart +' </span>';
             content += '<i>铁路&nbsp;中转&nbsp;4天&nbsp;不来梅</i>';

@@ -167,6 +167,7 @@
                         t_emp
             values (#{eid},#{ename},#{epassword},#{esex},#{eaddress},#{regtime},1,#{etel},#{elevel})
   </insert>
+  <insert id="addER"></insert>
 
   <!--  获取最大值的eid-->
   <select id="getMaxeid" resultType="integer">

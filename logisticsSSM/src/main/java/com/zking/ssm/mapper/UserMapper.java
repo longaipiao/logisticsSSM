@@ -1,7 +1,10 @@
 package com.zking.ssm.mapper;
 
 import com.zking.ssm.model.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface UserMapper {
@@ -15,7 +18,7 @@ public interface UserMapper {
 
     int updateByPrimaryKeySelective(User record);
 
-    int updateByPrimaryKey(User record);
+
 
     /**
      * 用户登录的方法
@@ -24,5 +27,30 @@ public interface UserMapper {
      */
     boolean UserLogin(User user);
 
+    /**
+     * 注册的方法
+     */
+    int regUser(User user);
 
+    /**
+     * 查询所有用户带模糊查的方法
+     */
+    public List<User> FindUserlike(User user);
+
+    /**
+     * <!--解封用户的方法  状态为1-->
+     */
+    public int updateState1(Integer uid);
+
+    /**
+     * <!--封禁用户的方法   状态为2-->
+     */
+    public int updateState2(Integer uid);
+
+    /**
+     * 编辑的方法
+     * @param record
+     * @return
+     */
+    int updateByPrimaryKey(User record);
 }

@@ -68,11 +68,7 @@
     <ul class="step_reg">
         <li class="done"><i>1</i>创建账号</li>
         <li class="step_tri"></li>
-        <li class="done"><i>2</i>验证邮箱</li>
-        <li class="step_tri"></li>
-        <li class="done"><i>3</i>完善信息</li>
-        <li class="step_tri"></li>
-        <li class="current"><i>4</i>完成</li>
+        <li class="current"><i>2</i>完成</li>
     </ul>
     <div class="bg_register">
         <div class="ok_reg"> <i></i> 恭喜您，注册成功
