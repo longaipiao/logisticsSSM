@@ -41,7 +41,6 @@ public class PriceController {
         int a=5*n;
         money+=a;
 
-//        IdGeneratorUtils aa = new IdGeneratorUtils();
         String id = idGeneratorUtils.nextId();
 
         HttpSession session = request.getSession();

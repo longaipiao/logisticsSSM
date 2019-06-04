@@ -76,11 +76,20 @@ public class OrderController {
         User user = (User)request.getSession().getAttribute("user");
         List<Order> orders = orderService.selectByUid(2);
 
-        for (Order order : orders) {
-            System.out.println("order = " + order);
-        }
+
         model.addAttribute("orders",orders);
 
         return"pages/08_user_center/my_booking.jsp";
+    };
+
+    @RequestMapping("/selectOrder")
+    public String selectOrder(HttpServletRequest request, Model model) {
+
+        String oid = request.getParameter("oid");
+        Order order = orderService.selectByPrimaryKey(oid);
+
+        model.addAttribute("order",order);
+
+        return"pages/08_user_center/details_booking.jsp";
     };
 }

@@ -79,7 +79,9 @@ public class LineController {
     public List<Line> getLineLid(HttpServletRequest request, HttpSession session){
         String lid = (String) request.getSession().getAttribute("lid");
         List<Line> lineByLid = lineService.getLineByLid(lid);
-        session.setAttribute("line",lineByLid);
+        for (Line line : lineByLid) {
+            session.setAttribute("line",line);
+        }
         return lineByLid;
     }
 

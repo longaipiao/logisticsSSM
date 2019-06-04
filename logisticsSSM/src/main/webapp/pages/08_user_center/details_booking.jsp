@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>用户中心-订舱单明细</title>
@@ -174,7 +175,20 @@
                 </colgroup>
                 <tr>
                     <th>订单服务状态：</th>
-                    <td>${order.ostate}</td>
+                    <td>
+                        <c:if test="${order.ostate==0}">
+                            已提交
+                        </c:if>
+                        <c:if test="${order.ostate==1}">
+                            运输中
+                        </c:if>
+                        <c:if test="${order.ostate==2}">
+                            已到达
+                        </c:if>
+                        <c:if test="${order.ostate==3}">
+                            已提货
+                        </c:if>
+                    </td>
                     <th>订单号：</th>
                     <td>${order.oid}</td>
                 </tr>
@@ -237,7 +251,7 @@
             <div class="btn_wrap" style="margin:20px 0 0 0;">
                 <div class="btn_inline">
                     <ul>
-                        <li> <a href="my_booking.jsp" class="btn_U_A">返回列表</a> </li>
+                        <li> <a href="/selectOrders" class="btn_U_A">返回列表</a> </li>
                         <li> <a id="confirm" href="#" class="btn_U_B">删除订单</a> </li>
                     </ul>
                 </div>

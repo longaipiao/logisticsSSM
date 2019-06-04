@@ -218,7 +218,7 @@
                     <td>${o.credate}</td>
                     <td>${o.blno}</td>
                     <td>${o.price.totalmoney}</td>
-                    <td><a href="details_booking.jsp">查看详情</a></td>
+                    <td><a href="/selectOrder?oid="+${o.oid}>查看详情</a></td>
                 </tr>
             </c:forEach>
 
