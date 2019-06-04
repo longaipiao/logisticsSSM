@@ -8,7 +8,6 @@ $(function () {
             , element = layui.element //元素操作
             , form = layui.form;
 
-
             //加载日期
             laydate.render({
                 elem: '#date'
@@ -87,21 +86,15 @@ $(function () {
                 $("#uid").val(data.uid);
                 $("#uname1").val(data.uname);
                 $("#upassword").val(data.upassword);
+                if(data.usex==="男"){
+                    $("#nan").prop("checked",true);
+                    $("#nv").prop("checked",false);
 
-                var sex = "";
-                sex += '<label class="layui-form-label">性别：</label>';
-                if(data.usex == '男'){
-                    sex += '<input type="radio" id="nan" name="usex" value="'+data.usex+'" title="男" checked>';
-                    sex += '<input type="radio" id="nv" name="usex" value="'+data.usex+'" title="女" >';
-                }else{
-                    sex += '<input type="radio" id="nan" name="usex" value="'+data.usex+'" title="男" >';
-                    sex += '<input type="radio" id="nv" name="usex" value="'+data.usex+'" title="女" checked>';
                 }
-                $("#sex").html(sex);
-                //alert($("#sex").html());
-                form.render();
-
-
+                if(data.usex==="女"){
+                    $("#nan").prop("checked",false);
+                    $("#nv").prop("checked",true);
+                }
 
                 $("#email").val(data.email);
                 $("#date").val(data.dateofbirth);
@@ -117,13 +110,9 @@ $(function () {
                     btn : [ '确定', '取消' ],
                     maxmin : true,
                     yes :function (index,data) {
-                        //alert($("#nan").val()?"男":"女");
-                        //alert($("#nv").val()?"女":"男");
-                       //var a =  $("#nan").val()?"男":("男")?$("#nv").val():"女";
-                       //alert(a);、
-                        var s = $("#nan").val()=="男"?"男":($("#nv").val()=="女")?"女":"没有";
-                        alert(s);
-                       /* $.ajax({
+                        var sex = $('input:radio[name="usex"]:checked').val();
+
+                       $.ajax({
                             type : 'post',
                             url : '/updateUser',
                             data : {
@@ -133,16 +122,19 @@ $(function () {
                                 dateofbirth : $("#date").val(),
                                 utel : $("#utel").val(),
                                 headportrait : $("#headportrait").val(),
+                                usex : sex,
                                 uid : $("#uid").val()
                             },
                             success : function (data) {
-                                alert(data);
-                                // 停顿一秒后,进行刷新详情页面.
-                                setTimeout(function() {
-                                    location.reload();
-                                }, 1 * 3000)
+                                if(data>0){
+                                    parent.layer.msg('修改成功！', {icon: 16,time:2000,shade:0.2});
+                                    // 停顿一秒后,进行刷新详情页面.
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, 1000)
+                                }
                             }
-                        });*/
+                        });
                     }
                 });
 

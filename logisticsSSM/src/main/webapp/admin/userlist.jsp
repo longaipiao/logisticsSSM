@@ -27,7 +27,9 @@
 </div>
 
 <%--usertable数据展示--%>
-<table id="userinfo" lay-filter="test"></table>
+<table id="userinfo" lay-filter="test">
+
+</table>
 
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -74,9 +76,12 @@
                 <input type="text" id="headportrait" required lay-verify="required"  autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item" id="sex">
-
-
+        <div class="layui-form-item" >
+            <label class="layui-form-label">性别：</label>
+            <div id="dx" class="layui-input-block">
+                <input type="radio" id="nan" name="usex" value="男" title="男" checked>
+                <input type="radio" id="nv" name="usex" value="女" title="女">
+            </div>
         </div>
         <%--<div class="layui-form-item">
             <div class="layui-input-block">
