@@ -74,4 +74,28 @@ public class Receiving implements Serializable {
     public void setRstate(Integer rstate) {
         this.rstate = rstate;
     }
+
+    @Override
+    public String toString() {
+        return "Receiving{" +
+                "rid='" + rid + '\'' +
+                ", rname='" + rname + '\'' +
+                ", pingyinrname='" + pingyinrname + '\'' +
+                ", rtel='" + rtel + '\'' +
+                ", remail='" + remail + '\'' +
+                ", raddress='" + raddress + '\'' +
+                ", rstate=" + rstate +
+                '}';
+    }
+
+    public Receiving() {
+    }
+
+    public Receiving(String rid, String rname, String rtel, String remail, String raddress) {
+        this.rid = rid;
+        this.rname = rname;
+        this.rtel = rtel;
+        this.remail = remail;
+        this.raddress = raddress;
+    }
 }

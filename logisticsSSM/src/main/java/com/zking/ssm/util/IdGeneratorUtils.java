@@ -1,5 +1,9 @@
 package com.zking.ssm.util;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
@@ -9,6 +13,7 @@ import java.text.SimpleDateFormat;
  * @author lenovo
  *
  */
+@Service
 public class IdGeneratorUtils {
 
 	private long workerId;   //用ip地址最后几个字节标示

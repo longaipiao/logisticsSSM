@@ -13,7 +13,6 @@
     <link href="../../css/reset.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="../../js/jquery.1.7.2.min.js"></script>
     <script type="text/javascript" src="../../js/customer2.js"></script>
-    <script type="text/javascript" src="/lhbjs/entrust_info.js"></script>
 </head>
 <body class="bg_f4">
 <div class="bg_fff">
@@ -146,14 +145,7 @@
 
     <div class="bg_com pTB_40 mTop_20 clear">
         <h2 class="title_main">发货方</h2>
-        <%--start--%>
-        <div class="w_table_A" id="entrust">
 
-        </div>
-        <%--end--%>
-
-
-        <h2 class="title_main mTop_40">请确认您的联系信息</h2>
         <div class="w_table_A">
             <table class="table_A">
                 <colgroup>
@@ -161,6 +153,44 @@
                     <col width="430">
                     <col width="130">
                     <col width="430">
+
+                </colgroup>
+                <tr>
+
+                    <th>起始港：</th>
+                    <td>DALIAN · CHINA 大连</td>
+                    <th>目的港：</th>
+                    <td>UST-LUGA · Russian Federation 乌斯特鲁加</td>
+
+                </tr>
+                <tr>
+                    <th>承运人：</th>
+                    <td>邦达天原</td>
+                    <th>车名：</th>
+                    <td>TOLEDO  TRIUMPH</td>
+                </tr>
+                <tr>
+                    <th>班次：</th>
+                    <td>0978-005W</td>
+                    <th><span>*</span>开车日期：</th>
+                    <td>2018-04-12</td>
+                </tr>
+
+            </table>
+        </div>
+
+
+
+        <h2 class="title_main mTop_40">请确认您的联系信息</h2>
+
+        <div class="w_table_A">
+            <table class="table_A">
+                <colgroup>
+                    <col width="130">
+                    <col width="430">
+                    <col width="130">
+                    <col width="430">
+
                 </colgroup>
                 <tr>
                     <th><span>*</span>联系人：</th>
@@ -171,12 +201,15 @@
                     </td>
                 </tr>
                 <tr>
+
                     <th>QQ：</th>
                     <td><input class="input_reg" type="text" placeholder="请输入QQ号"/>
                     </td>
                     <th>固定电话：</th>
                     <td><input class="input_reg" type="text" placeholder="请输入固定电话"/></td>
+
                 </tr>
+
             </table>
 
         </div>
@@ -186,9 +219,15 @@
             <div class="btn_inline">
                 <ul>
                     <li> <a href="/addOrder" class="btn_login">立即委托</a> </li>
+
+
                 </ul>
+
+
             </div>
         </div>
+
+
     </div>
 </div>
 

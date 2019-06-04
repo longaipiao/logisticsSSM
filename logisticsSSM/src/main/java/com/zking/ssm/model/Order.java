@@ -104,4 +104,35 @@ public class Order implements Serializable {
     public void setThstate(Integer thstate) {
         this.thstate = thstate;
     }
+
+    public Order(String oid, Integer uid, String blno, String credate, Integer ostate, String pid, String lid, String oaddress, Integer thstate) {
+        this.oid = oid;
+        this.uid = uid;
+        this.blno = blno;
+        this.credate = credate;
+        this.ostate = ostate;
+        this.pid = pid;
+        this.lid = lid;
+        this.oaddress = oaddress;
+        this.thstate = thstate;
+    }
+
+    public Order() {
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "oid='" + oid + '\'' +
+                ", uid=" + uid +
+                ", blno='" + blno + '\'' +
+                ", credate='" + credate + '\'' +
+                ", onumber='" + onumber + '\'' +
+                ", ostate=" + ostate +
+                ", pid='" + pid + '\'' +
+                ", lid='" + lid + '\'' +
+                ", oaddress='" + oaddress + '\'' +
+                ", thstate=" + thstate +
+                '}';
+    }
 }
