@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>用户中心-我的订舱单</title>
@@ -150,12 +151,9 @@
 <div class="wrap_user clear">
     <div class="left_menu">
         <ul>
-            <li><a href="#">铁路班列</a></li>
-            <li><a class="current" href="my_booking.jsp">我的订舱单</a></li>
-            <li><a href="my_account.jsp">我的对账单</a></li>
-            <li><a href="my_tool.jsp">我的工具箱</a></li>
-            <li><a href="#">账户设置</a></li>
-            <li><a href="#">系统消息</a></li>
+            <li><a href="/line">铁路班列</a></li>
+            <li><a class="current" href="/selectOrders">我的订舱单</a></li>
+            <li><a href="/pages/08_user_center/user_center.jsp">账户设置</a></li>
         </ul>
     </div>
     <div class="right_con">
@@ -175,34 +173,19 @@
                     <td><input class="input_u" placeholder="订单号"/></td>
                     <th>提单号：</th>
                     <td><input class="input_u" placeholder="提单号"/></td>
-                    <th>起运港：</th>
-                    <td><input class="input_u" placeholder="起运港"/></td>
                 </tr>
                 <tr>
-                    <th>目的港：</th>
-                    <td><input class="input_u" placeholder="目的港"/></td>
-                    <th>贸易单号：</th>
-                    <td><input class="input_u" placeholder="贸易单号"/></td>
-                    <th>订单类型：</th>
-                    <td><select class="sel_u">
-                        <option>全部</option>
-                    </select></td>
+                    <th>起运站：</th>
+                    <td><input class="input_u" placeholder="起运站"/></td>
+                    <th>目的站：</th>
+                    <td><input class="input_u" placeholder="目的站"/></td>
                 </tr>
-                <tr>
-                    <th>创建日期：</th>
-                    <td colspan="3"><span class="bg_inp_u fL" style="padding: 0;">
-            <input type="text" placeholder="2018" class="lay_t_item">
-            </span> <span class="fL">至</span> <span class="bg_inp_u fL" style="padding: 0;">
-            <input type="text" placeholder="2018" class="lay_t_item">
-            </span></td>
-                    <th>其他：</th>
-                    <td><input class="input_u" placeholder="船名／航次"/></td>
-                </tr>
+
             </table>
             <div class="btn_wrap" style="margin:20px 0 0 0;">
                 <div class="btn_inline">
                     <ul>
-                        <li> <a href="#" class="btn_search_user">查询</a> </li>
+                        <li> <a href="/" class="btn_search_user">查询</a> </li>
                     </ul>
                 </div>
             </div>
@@ -212,28 +195,33 @@
                     <th>订单号</th>
                     <th>创建日期</th>
                     <th>提单号</th>
-                    <th>贸易单号</th>
                     <th>订单总价</th>
                     <th>操作</th>
                 </tr>
+            <c:forEach items="${orders}" var="o">
                 <tr>
-                    <td>已完成</td>
-                    <td>W12345</td>
-                    <td>2018-01-10</td>
-                    <td>T67890</td>
-                    <td>M123456THC</td>
-                    <td>2000.00CNY</td>
+                    <td>
+                        <c:if test="${o.ostate==0}">
+                            已提交
+                        </c:if>
+                        <c:if test="${o.ostate==1}">
+                            运输中
+                        </c:if>
+                        <c:if test="${o.ostate==2}">
+                            已到达
+                        </c:if>
+                        <c:if test="${o.ostate==3}">
+                            已提货
+                        </c:if>
+                    </td>
+                    <td>${o.oid}</td>
+                    <td>${o.credate}</td>
+                    <td>${o.blno}</td>
+                    <td>${o.price.totalmoney}</td>
                     <td><a href="details_booking.jsp">查看详情</a></td>
                 </tr>
-                <tr>
-                    <td>已完成</td>
-                    <td>W12345</td>
-                    <td>2018-01-10</td>
-                    <td>T67890</td>
-                    <td>M123456THC</td>
-                    <td>2000.00CNY</td>
-                    <td><a href="details_booking.jsp">查看详情</a></td>
-                </tr>
+            </c:forEach>
+
             </table>
         </div>
     </div>

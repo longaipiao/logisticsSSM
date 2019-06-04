@@ -8,10 +8,20 @@
     <result column="credate" property="credate" jdbcType="VARCHAR" />
     <result column="onumber" property="onumber" jdbcType="VARCHAR" />
     <result column="ostate" property="ostate" jdbcType="INTEGER" />
-    <result column="pid" property="pid" jdbcType="VARCHAR" />
     <result column="lid" property="lid" jdbcType="VARCHAR" />
     <result column="oaddress" property="oaddress" jdbcType="VARCHAR" />
     <result column="thstate" property="thstate" jdbcType="INTEGER" />
+    <association property="price" javaType="com.zking.ssm.model.Price">
+      <id column="pid" property="pid"/>
+      <result column="uid" property="uid"/>
+      <result column="pweight" property="pweight"/>
+      <result column="landfreight" property="landfreight"/>
+      <result column="servicefee" property="servicefee"/>
+      <result column="totalmoney" property="totalmoney"/>
+      <result column="payment" property="payment"/>
+      <result column="pstate" property="pstate"/>
+    </association>
+
   </resultMap>
   <sql id="Base_Column_List" >
     oid, uid, blno, credate, onumber, ostate, pid, lid, oaddress, thstate
@@ -33,7 +43,7 @@
       thstate)
     values (#{oid,jdbcType=VARCHAR}, #{uid,jdbcType=INTEGER}, #{blno,jdbcType=VARCHAR}, 
       #{credate,jdbcType=VARCHAR}, #{onumber,jdbcType=VARCHAR}, #{ostate,jdbcType=INTEGER}, 
-      #{pid,jdbcType=VARCHAR}, #{lid,jdbcType=VARCHAR}, #{oaddress,jdbcType=VARCHAR}, 
+      #{price.pid,jdbcType=VARCHAR}, #{lid,jdbcType=VARCHAR}, #{oaddress,jdbcType=VARCHAR},
       #{thstate,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.zking.ssm.model.Order" >
@@ -90,7 +100,7 @@
         #{ostate,jdbcType=INTEGER},
       </if>
       <if test="pid != null" >
-        #{pid,jdbcType=VARCHAR},
+        #{price.pid,jdbcType=VARCHAR},
       </if>
       <if test="lid != null" >
         #{lid,jdbcType=VARCHAR},
@@ -122,7 +132,7 @@
         ostate = #{ostate,jdbcType=INTEGER},
       </if>
       <if test="pid != null" >
-        pid = #{pid,jdbcType=VARCHAR},
+        pid = #{price.pid,jdbcType=VARCHAR},
       </if>
       <if test="lid != null" >
         lid = #{lid,jdbcType=VARCHAR},
@@ -143,10 +153,15 @@
       credate = #{credate,jdbcType=VARCHAR},
       onumber = #{onumber,jdbcType=VARCHAR},
       ostate = #{ostate,jdbcType=INTEGER},
-      pid = #{pid,jdbcType=VARCHAR},
+      pid = #{price.id,jdbcType=VARCHAR},
       lid = #{lid,jdbcType=VARCHAR},
       oaddress = #{oaddress,jdbcType=VARCHAR},
       thstate = #{thstate,jdbcType=INTEGER}
     where oid = #{oid,jdbcType=VARCHAR}
   </update>
+  <select id="selectByUid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    SELECT a.*,b.* FROM t_order a,t_price b where a.uid = #{uid} and a.pid = b.pid
+  </select>
+
+
 </mapper>
