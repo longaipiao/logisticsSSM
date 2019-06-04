@@ -13,6 +13,7 @@
     <link href="../../css/reset.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="../../js/jquery.1.7.2.min.js"></script>
     <script type="text/javascript" src="../../js/customer2.js"></script>
+    <script type="text/javascript" src="/lhbjs/entrust_info.js"></script>
 </head>
 <body class="bg_f4">
 <div class="bg_fff">
@@ -144,47 +145,15 @@
     </div>
 
     <div class="bg_com pTB_40 mTop_20 clear">
-        <h2 class="title_main">车辆信息</h2>
+        <h2 class="title_main">发货方</h2>
+        <%--start--%>
+        <div class="w_table_A" id="entrust">
 
-        <div class="w_table_A">
-            <table class="table_A">
-                <colgroup>
-                    <col width="130">
-                    <col width="430">
-                    <col width="130">
-                    <col width="430">
-
-                </colgroup>
-                <tr>
-
-                    <th>起始港：</th>
-                    <td>DALIAN · CHINA 大连</td>
-                    <th>目的港：</th>
-                    <td>UST-LUGA · Russian Federation 乌斯特鲁加</td>
-
-                </tr>
-                <tr>
-                    <th>承运人：</th>
-                    <td>邦达天原</td>
-                    <th>车名：</th>
-                    <td>TOLEDO  TRIUMPH</td>
-                </tr>
-                <tr>
-                    <th>班次：</th>
-                    <td>0978-005W</td>
-                    <th><span>*</span>开车日期：</th>
-                    <td>2018-04-12</td>
-                </tr>
-
-            </table>
         </div>
-
+        <%--end--%>
 
 
         <h2 class="title_main mTop_40">请确认您的联系信息</h2>
-        <form id="forma" action="/addOrder" method="post">
-
-
         <div class="w_table_A">
             <table class="table_A">
                 <colgroup>
@@ -192,69 +161,22 @@
                     <col width="430">
                     <col width="130">
                     <col width="430">
-
                 </colgroup>
                 <tr>
                     <th><span>*</span>联系人：</th>
-                    <td><input name="sname" class="input_reg" type="text" value="${user.uname}"/></td>
+                    <td><input class="input_reg" type="text" value="${user.uname}"/></td>
 
                     <th><span>*</span>手机号：</th>
-                    <td><input name="stel" class="input_reg" type="text" value="${user.utel}"/>
-                    </td>
-                </tr>
-
-                <tr>
-
-                    <th><span>*</span>发货详细地址：</th>
-                    <td><input name="saddress" class="input_reg" type="text" placeholder="请输入地址"/>
-                    </td>
-                    <th>货物品名：</th>
-                    <td><input name="goodname" class="input_reg" type="text" placeholder="请输入货物品名"/></td>
-
-                </tr>
-                <tr>
-
-                    <th>需要车厢数：</th>
-                    <td><input name="quantity" class="input_reg" type="text" placeholder="请输入需要车厢数"/>
-                    </td>
-                    <th>备注：</th>
-                    <td><input name="snote" class="input_reg" type="text" placeholder="请输入备注"/></td>
-
-                </tr>
-
-            </table>
-
-        </div>
-
-        <h2 class="title_main mTop_40">请确认收货人的联系信息</h2>
-
-        <div class="w_table_A">
-            <table class="table_A">
-                <colgroup>
-                    <col width="130">
-                    <col width="430">
-                    <col width="130">
-                    <col width="430">
-
-                </colgroup>
-                <tr>
-                    <th><span>*</span>联系人：</th>
-                    <td><input name="rname" class="input_reg" type="text" placeholder="请输入联系人姓名"/></td>
-
-                    <th><span>*</span>手机号：</th>
-                    <td><input name="rtel" class="input_reg" type="text" placeholder="请输入收货人手机号"/>
+                    <td><input class="input_reg" type="text" value="${user.utel}"/>
                     </td>
                 </tr>
                 <tr>
-
-                    <th><span>*</span>收货详细地址：</th>
-                    <td><input name="raddress" class="input_reg" type="text" placeholder="请输入地址"/>
+                    <th>QQ：</th>
+                    <td><input class="input_reg" type="text" placeholder="请输入QQ号"/>
                     </td>
-                    <th>电子邮箱：</th>
-                    <td><input name="remail" class="input_reg" type="text" placeholder="请输入电子邮箱"/></td>
-
+                    <th>固定电话：</th>
+                    <td><input class="input_reg" type="text" placeholder="请输入固定电话"/></td>
                 </tr>
-
             </table>
 
         </div>
@@ -263,15 +185,10 @@
         <div class="btn_wrap" style="margin:0 0 20px 0">
             <div class="btn_inline">
                 <ul>
-                    <li> <a href="javascript:void(0)" name="submit" onclick="document.getElementById('forma').submit();return false" class="btn_login">立即委托</a> </li>
+                    <li> <a href="/addOrder" class="btn_login">立即委托</a> </li>
                 </ul>
-
-
             </div>
         </div>
-
-        </form>
-
     </div>
 </div>
 
@@ -328,5 +245,6 @@
 <div class="tcp_bg"></div>
 <script src="../../js/banner.js" type="text/javascript"></script>
 <script src="../../js/slider.js" type="text/javascript"></script>
+
 </body>
 </html>

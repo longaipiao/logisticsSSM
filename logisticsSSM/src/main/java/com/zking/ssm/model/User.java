@@ -19,6 +19,16 @@ public class User implements Serializable {
 
     private String headportrait;
 
+    private Integer ustate;
+
+    public Integer getUstate() {
+        return ustate;
+    }
+
+    public void setUstate(Integer ustate) {
+        this.ustate = ustate;
+    }
+
     private static final long serialVersionUID = 1L;
 
     public Integer getUid() {
@@ -85,6 +95,7 @@ public class User implements Serializable {
         this.headportrait = headportrait == null ? null : headportrait.trim();
     }
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -96,6 +107,7 @@ public class User implements Serializable {
                 ", usex='" + usex + '\'' +
                 ", utel='" + utel + '\'' +
                 ", headportrait='" + headportrait + '\'' +
+                ", ustate=" + ustate +
                 '}';
     }
 }

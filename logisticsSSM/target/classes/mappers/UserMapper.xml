@@ -10,9 +10,10 @@
     <result column="usex" property="usex" jdbcType="VARCHAR" />
     <result column="utel" property="utel" jdbcType="VARCHAR" />
     <result column="headportrait" property="headportrait" jdbcType="VARCHAR" />
+    <result column="ustate" property="ustate" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    uid, uname, upassword, email, dateofbirth, usex, utel, headportrait
+    uid, uname, upassword, email, dateofbirth, usex, utel, headportrait,ustate
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -29,6 +30,15 @@
     where uname = #{uname} and upassword = #{upassword}
   </select>
 
+  <!--用户查询带模糊查的方法-->
+  <select id="FindUserlike" resultType="com.zking.ssm.model.User" parameterType="com.zking.ssm.model.User">
+    select
+      <include refid="Base_Column_List" />
+    from t_user where 1 = 1
+    <if test="uname!=null">
+      and uname like '%${uname}%'
+    </if>
+  </select>
 
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
@@ -98,7 +108,15 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zking.ssm.model.User" >
+
+    <!--用户注册的方法-->
+    <insert id="regUser" parameterType="com.zking.ssm.model.User">
+        insert into t_user(uname,upassword,email,utel,dateofbirth)
+        values(#{uname},#{upassword},#{email},#{utel},#{dateofbirth})
+    </insert>
+
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.zking.ssm.model.User" >
     update t_user
     <set >
       <if test="uname != null" >
@@ -125,6 +143,13 @@
     </set>
     where uid = #{uid,jdbcType=INTEGER}
   </update>
+
+
+  <!--/**
+     * 编辑的方法
+     * @param record
+     * @return
+     */-->
   <update id="updateByPrimaryKey" parameterType="com.zking.ssm.model.User" >
     update t_user
     set uname = #{uname,jdbcType=VARCHAR},
@@ -135,5 +160,14 @@
       utel = #{utel,jdbcType=VARCHAR},
       headportrait = #{headportrait,jdbcType=VARCHAR}
     where uid = #{uid,jdbcType=INTEGER}
+  </update>
+
+  <!--解封用户的方法  状态为1-->
+  <update id="updateState1" parameterType="integer">
+    update t_user set ustate = 1 where uid = #{uid}
+  </update>
+  <!--封禁用户的方法   状态为2-->
+  <update id="updateState2" parameterType="integer">
+    update t_user set ustate = 2 where uid = #{uid}
   </update>
 </mapper>

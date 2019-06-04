@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -75,9 +76,10 @@ public class LineController {
      */
     @RequestMapping(value = "/findLid")
     @ResponseBody
-    public List<Line> getLineLid(HttpServletRequest request){
+    public List<Line> getLineLid(HttpServletRequest request, HttpSession session){
         String lid = (String) request.getSession().getAttribute("lid");
         List<Line> lineByLid = lineService.getLineByLid(lid);
+        session.setAttribute("line",lineByLid);
         return lineByLid;
     }
 

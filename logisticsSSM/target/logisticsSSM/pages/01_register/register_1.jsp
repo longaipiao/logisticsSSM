@@ -12,10 +12,13 @@
     <link href="../../css/common.css" rel="stylesheet" type="text/css"/>
     <link href="../../css/verify.css" rel="stylesheet" type="text/css"/>
     <link href="../../css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="/admin/plugins/layui/css/layui.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="../../js/jquery.1.7.2.min.js"></script>
     <script type="text/javascript" src="../../js/customer2.js"></script>
     <script type="text/javascript" src="../../js/verify.js"></script>
     <script type="text/javascript" src="/lhbjs/userlogin.js"></script>
+    <script type="text/javascript" src="/admin/plugins/layui/layui.all.js"></script>
+
 </head>
 <body class="bg_f4">
 <div class="bg_fff">
@@ -68,33 +71,31 @@
     <ul class="step_reg">
         <li class="current"><i>1</i>创建账号</li>
         <li class="step_tri"></li>
-        <li><i>2</i>验证邮箱</li>
-        <li class="step_tri"></li>
-        <li><i>3</i>完善信息</li>
-        <li class="step_tri"></li>
-        <li><i>4</i>完成</li>
+        <li><i>2</i>完成</li>
     </ul>
     <div class="bg_register">
         <ul class="ul_reg_input">
             <li><b class="b2">账户名:</b>
                 <div class="length_r">
-                    <input type="text" class="input_reg" placeholder="请输入账户名" />
+                    <input type="text" id="uname1" oninput = "value=value.replace(/[a-zA-Z0-9_-]{10,16}/g,'')" class="input_reg" placeholder="请输入账户名" />
+                </div>
+            </li>
+            <li><b class="b2">密码:</b>
+                <div class="length_r">
+                    <input type="password" id="upassword1" oninput = "value=value.replace(/[a-zA-Z0-9]{7,16}/g,'')" class="input_reg" placeholder="请输入密码" />
                 </div>
             </li>
             <li><b class="b2">电子邮箱:</b>
                 <div class="length_r">
-                    <input type="text" class="input_reg warm" placeholder="请输入电子邮箱" />
+                    <input type="text" oninput = "value=value.replace(/[\w]{18}/g,'')" id="email" class="input_reg warm" placeholder="请输入电子邮箱" />
                 </div>
             <li><b class="b2">手机号码:</b>
                 <div class="length_r">
-                    <input type="text" class="input_reg" placeholder="请输入手机号码" />
+                    <input type="text" id="utel" oninput = "value=value.replace(/[+]{0,1}[1-9]{12}/g,'')" class="input_reg" placeholder="请输入手机号码" />
                 </div>
             </li>
             <li>
-                <div class="protocol_r">点击“创建账户”，我同意接受<a class="tcp" href="#" data-dialog="dialog3">网站协议</a>。</div>
-            </li>
-            <li>
-                <div class="length_r"><a class="btn_C" href="register_2.jsp">创建账户</a></div>
+                <div class="length_r"><a class="btn_C" href="javasrcipt:void(0);" id="reg">注册</a></div>
             </li>
         </ul>
     </div>
@@ -129,17 +130,18 @@
                 <div class="tab_con">
 
                     <div class="tab_con_list">
-                        <form action="/UserLogin" method="post">
+                        <%--<form action="/UserLogin" method="post">--%>
                         <ul>
                             <li>
-                                <input type="text" name="uname" class="input_login" placeholder="用户名"/>
+                                <input type="text" id="uname" oninput = "value=value.replace(/[\d]/g,'')" class="input_login" placeholder="用户名"/>
                             </li>
                             <li>
-                                <input type="text" name="upassword" class="input_login" placeholder="密码"/>
+                                <input type="text" id="upassword" oninput = "value=value.replace(/[^\d]/g,'')" class="input_login" placeholder="密码"/>
                             </li>
                         </ul>
                         <div id="mpanel1" > </div>
-                        <input type="submit" style="font-size: 20px; align-content: center" class="btn_login" value="登录"> </form>
+                        <input type="submit" style="font-size: 20px; align-content: center" id="login" class="btn_login" value="登录">
+                           <%-- </form>--%>
                     </div>
 
                 </div>
