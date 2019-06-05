@@ -15,7 +15,7 @@ public class Order implements Serializable {
 
     private Integer ostate;
 
-    private String pid;
+    private Price price;
 
     private String lid;
 
@@ -24,6 +24,11 @@ public class Order implements Serializable {
     private Integer thstate;
 
     private static final long serialVersionUID = 1L;
+
+    public String getPid(){
+        return price.getPid();
+    };
+
 
     public String getOid() {
         return oid;
@@ -73,12 +78,12 @@ public class Order implements Serializable {
         this.ostate = ostate;
     }
 
-    public String getPid() {
-        return pid;
+    public Price getPrice() {
+        return price;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid == null ? null : pid.trim();
+    public void setPrice(Price price) {
+        this.price = price;
     }
 
     public String getLid() {
@@ -105,13 +110,13 @@ public class Order implements Serializable {
         this.thstate = thstate;
     }
 
-    public Order(String oid, Integer uid, String blno, String credate, Integer ostate, String pid, String lid, String oaddress, Integer thstate) {
+    public Order(String oid, Integer uid, String blno, String credate, Integer ostate, Price price, String lid, String oaddress, Integer thstate) {
         this.oid = oid;
         this.uid = uid;
         this.blno = blno;
         this.credate = credate;
         this.ostate = ostate;
-        this.pid = pid;
+        this.price = price;
         this.lid = lid;
         this.oaddress = oaddress;
         this.thstate = thstate;
@@ -129,7 +134,7 @@ public class Order implements Serializable {
                 ", credate='" + credate + '\'' +
                 ", onumber='" + onumber + '\'' +
                 ", ostate=" + ostate +
-                ", pid='" + pid + '\'' +
+                ", price=" + price +
                 ", lid='" + lid + '\'' +
                 ", oaddress='" + oaddress + '\'' +
                 ", thstate=" + thstate +

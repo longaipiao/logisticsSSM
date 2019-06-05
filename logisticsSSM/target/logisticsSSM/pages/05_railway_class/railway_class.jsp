@@ -149,9 +149,9 @@
         <form action="/line" method="post">
         <div class="page_con">
             <div class="cond_line">
-                <input type="text" id="lstart" value="${lstart}" class="inp_line" placeholder="起运港"/>
+                <input type="text" id="lstart" value="${lstart}" class="inp_line" placeholder="起运站"/>
                 <span class="fL">|</span>
-                <input type="text" id="lend" value="${lend}" class="inp_line" placeholder="目的港"/>
+                <input type="text" id="lend" value="${lend}" class="inp_line" placeholder="目的站"/>
             </div>
             <div class="layui-inline">
                 <label class="layui-form-label">起始日期</label>

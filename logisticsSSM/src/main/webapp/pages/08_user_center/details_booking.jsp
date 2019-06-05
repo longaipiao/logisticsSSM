@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>用户中心-订舱单明细</title>
@@ -153,12 +154,9 @@
 <div class="wrap_user clear">
     <div class="left_menu">
         <ul>
-            <li><a href="#">铁路班列</a></li>
-            <li><a class="current" href="my_booking.jsp">我的订舱单</a></li>
-            <li><a href="my_account.jsp">我的对账单</a></li>
-            <li><a href="my_tool.jsp">我的工具箱</a></li>
-            <li><a href="#">账户设置</a></li>
-            <li><a href="#">系统消息</a></li>
+            <li><a href="/line">铁路班列</a></li>
+            <li><a class="current" href="/selectOrders">我的订舱单</a></li>
+            <li><a href="/pages/08_user_center/user_center.jsp">账户设置</a></li>
         </ul>
     </div>
     <div class="right_con">
@@ -174,21 +172,33 @@
                 </colgroup>
                 <tr>
                     <th>订单服务状态：</th>
-                    <td>已完成</td>
+                    <td>
+                        <c:if test="${order.ostate==0}">
+                            已提交
+                        </c:if>
+                        <c:if test="${order.ostate==1}">
+                            运输中
+                        </c:if>
+                        <c:if test="${order.ostate==2}">
+                            已到达
+                        </c:if>
+                        <c:if test="${order.ostate==3}">
+                            已提货
+                        </c:if>
+                    </td>
                     <th>订单号：</th>
-                    <td>W12345</td>
+                    <td>${order.oid}</td>
                 </tr>
                 <tr>
                     <th>创建日期：</th>
-                    <td>2018-01-10</td>
+                    <td>${order.credate}</td>
                     <th>提单号：</th>
-                    <td>T67890</td>
+                    <td>${order.blno}</td>
                 </tr>
                 <tr>
-                    <th>贸易单号：</th>
-                    <td>M2345THC</td>
+
                     <th>订单总价：</th>
-                    <td>2000.00CNY</td>
+                    <td>${order.price.totalmoney}</td>
                 </tr>
                 <tr class="bb">
                     <td colspan="4"></td>
@@ -197,28 +207,20 @@
                     <td colspan="4"></td>
                 </tr>
                 <tr>
-                    <th>起始港：</th>
-                    <td>DALIAN · CHINA 大连</td>
-                    <th>目的港：</th>
-                    <td>UST-LUGA · Russian Federation 乌斯特鲁加</td>
+                    <th>起始站：</th>
+                    <td>${line.lstart}</td>
+                    <th>目的站：</th>
+                    <td>${line.lend}</td>
                 </tr>
                 <tr>
                     <th>承运人：</th>
-                    <td>邦达天原</td>
-                    <th>车名：</th>
-                    <td>TOLEDO  TRIUMPH</td>
+                    <td>${line.trains}</td>
+                    <th>车名/班次：</th>
+                    <td>${line.train}</td>
                 </tr>
                 <tr>
-                    <th>班次：</th>
-                    <td>0978-005w</td>
-                    <th><span class="red">*</span>开航日期：</th>
-                    <td>2000.00CNY</td>
-                </tr>
-                <tr>
-                    <th>交易类型：</th>
-                    <td>CIF</td>
-                    <th></th>
-                    <td></td>
+                    <th>开航日期：</th>
+                    <td>${line.startdate}</td>
                 </tr>
             </table>
             <h2 class="mTop_40">联系人信息</h2>
@@ -230,20 +232,15 @@
                     <col width="320px">
                 </colgroup>
                 <tr>
-                    <th>公司名称：</th>
-                    <td>TAIl物流有限公司</td>
+
                     <th>联系人：</th>
-                    <td>张三</td>
-                </tr>
-                <tr>
+                    <td>${user.uname}</td>
                     <th>手机号：</th>
-                    <td>18717712345</td>
-                    <th>固话：</th>
-                    <td>021-12345</td>
+                    <td>${user.utel}</td>
                 </tr>
                 <tr>
-                    <th>QQ号：</th>
-                    <td>12345</td>
+                    <th>电子邮箱：</th>
+                    <td>${user.email}</td>
                     <th></th>
                     <td></td>
                 </tr>
@@ -251,7 +248,7 @@
             <div class="btn_wrap" style="margin:20px 0 0 0;">
                 <div class="btn_inline">
                     <ul>
-                        <li> <a href="my_booking.jsp" class="btn_U_A">返回列表</a> </li>
+                        <li> <a href="/selectOrders" class="btn_U_A">返回列表</a> </li>
                         <li> <a id="confirm" href="#" class="btn_U_B">删除订单</a> </li>
                     </ul>
                 </div>

@@ -152,12 +152,9 @@
     <div class="wrap_user clear">
         <div class="left_menu">
             <ul>
-                <li><a href="#">铁路班列</a></li>
-                <li><a href="my_booking.jsp">我的订舱单</a></li>
-                <li><a href="my_account.jsp">我的对账单</a></li>
-                <li><a href="my_tool.jsp">我的工具箱</a></li>
-                <li><a href="#">账户设置</a></li>
-                <li><a href="#">系统消息</a></li>
+                <li><a href="/line">铁路班列</a></li>
+                <li><a class="current" href="/selectOrders">我的订舱单</a></li>
+                <li><a href="/pages/08_user_center/user_center.jsp">账户设置</a></li>
             </ul>
         </div>
         <div class="right_con">

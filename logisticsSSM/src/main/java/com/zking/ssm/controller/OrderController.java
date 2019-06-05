@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.beans.Transient;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class OrderController {
@@ -22,7 +24,7 @@ public class OrderController {
     @Autowired
     private IdGeneratorUtils idGeneratorUtils;
 
-
+    @Transient
     @RequestMapping("/addOrder")
     public String addOrder(HttpServletRequest request, Model model){
 
@@ -61,7 +63,7 @@ public class OrderController {
         //取货id
         String blno = idGeneratorUtils.nextId();
 
-        Order order = new Order(id,1,blno,time,0,price.getPid(),"9599ad40-8504-11e9-be43-00163e084abe",sid,1);
+        Order order = new Order(id,2,blno,time,0,price,"9599ad40-8504-11e9-be43-00163e084abe",sid,1);
 
         orderService.insertSelective(order);
         session.setAttribute("order",order);
@@ -72,9 +74,22 @@ public class OrderController {
     public String selectOrders(HttpServletRequest request, Model model) {
 
         User user = (User)request.getSession().getAttribute("user");
+        List<Order> orders = orderService.selectByUid(2);
 
 
+        model.addAttribute("orders",orders);
 
         return"pages/08_user_center/my_booking.jsp";
+    };
+
+    @RequestMapping("/selectOrder")
+    public String selectOrder(HttpServletRequest request, Model model) {
+
+        String oid = request.getParameter("oid");
+        Order order = orderService.selectByPrimaryKey(oid);
+
+        model.addAttribute("order",order);
+
+        return"pages/08_user_center/details_booking.jsp";
     };
 }

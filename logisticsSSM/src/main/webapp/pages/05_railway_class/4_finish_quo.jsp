@@ -149,7 +149,7 @@
             <h3>您的&nbsp;<span>铁路订航</span>&nbsp;委托订单已经生成</h3>
             <p>订单号：<span>${order.oid}</span></p>
             <p>RAIL会尽快处理，请耐心等待...</p>
-            <p><a href="/pages/08_user_center/my_booking.jsp">订单列表</a>&nbsp;&nbsp;&nbsp;<a href="/pages/08_user_center/details_booking.jsp">查看详情</a></p>
+            <p><a href="/selectOrders">订单列表</a>&nbsp;&nbsp;&nbsp;<a href="/pages/08_user_center/details_booking.jsp">查看详情</a></p>
         </div>
 
 

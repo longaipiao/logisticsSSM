@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.beans.Transient;
 
 @Controller
 public class PriceController {
@@ -20,6 +21,7 @@ public class PriceController {
     @Autowired
     private IdGeneratorUtils idGeneratorUtils;
 
+    @Transient
     @RequestMapping("/addPrice")
     public String addPrice(HttpServletRequest request, Model model){
         int money = 0;
@@ -39,7 +41,6 @@ public class PriceController {
         int a=5*n;
         money+=a;
 
-//        IdGeneratorUtils aa = new IdGeneratorUtils();
         String id = idGeneratorUtils.nextId();
 
         HttpSession session = request.getSession();
