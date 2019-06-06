@@ -46,7 +46,7 @@ public class PriceController {
         HttpSession session = request.getSession();
         User user =(User) session.getAttribute("user");
         Price price = new Price(id, 2, zl, a, fuwu, money,0);
-        int i = priceService.insert(price);
+        int i = priceService.addPrice(price);
 
         session.setAttribute("price",price);
 

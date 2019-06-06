@@ -68,10 +68,10 @@ layui.define(['layer', 'ztree'], function(exports) {
         if (findArray(vals.split(','), node.id) !== -1) {
           zTree.checkNode(node, true, false);
           $(options.elem).append([
-            '<a href="javascript:;">',
+            '<srgall.js href="javascript:;">',
             node.name,
             ' <i class="layui-icon" data-action="close" data-tid="' + node.tId + '" data-id="' + node.id + '">&#x1006;</i>',
-            '</a>'
+            '</srgall.js>'
           ].join(''));
           _bindCloseEvent();
         }
@@ -99,10 +99,10 @@ layui.define(['layer', 'ztree'], function(exports) {
       var _htm = [];
       layui.each(arr, function(index, item) {
         _htm.push([
-          '<a href="javascript:;">',
+          '<srgall.js href="javascript:;">',
           item.name,
           ' <i class="layui-icon" data-action="close" data-tid="' + item.tid + '" data-id="' + item.id + '">&#x1006;</i>',
-          '</a>'
+          '</srgall.js>'
         ].join(''));
       });
       _div.html(_htm.join(''));

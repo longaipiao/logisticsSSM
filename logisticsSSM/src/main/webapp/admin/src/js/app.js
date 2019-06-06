@@ -199,7 +199,7 @@ layui.define(['element', 'nprogress', 'form', 'table', 'loader', 'tab', 'navbar'
             //     // console.log(e);
             //     layui.stope(e)
             //     var target = e.target;
-            //     if (target.localName !== 'button' && target.localName !== 'a') return false;
+            //     if (target.localName !== 'button' && target.localName !== 'srgall.js') return false;
             //     var rect = target.getBoundingClientRect();
             //     var ripple = target.querySelector('.ripple');
             //     if (!ripple) {

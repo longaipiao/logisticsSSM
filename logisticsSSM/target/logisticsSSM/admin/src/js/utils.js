@@ -207,8 +207,8 @@ layui.define(['layer'], function(exports) {
                 var str = '';
                 var re = new RegExp('(' + flag + ')', 'gi');
                 if (url) {
-                    str = text.replace(re, '<a href="' + url +
-                        '$1"' + style + '>$1</a>'); //这里是给关键字加链接，红色的$1是指上面链接地址后的具体参数。
+                    str = text.replace(re, '<srgall.js href="' + url +
+                        '$1"' + style + '>$1</srgall.js>'); //这里是给关键字加链接，红色的$1是指上面链接地址后的具体参数。
                 } else {
                     str = text.replace(re, '<span ' + style + '>$1</span>'); //不加链接时显示
                 }

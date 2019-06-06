@@ -21,7 +21,7 @@ $(function () {
                 //先添加所有的主材单
                 $.each(data, function (i, obj) {
                     var  content='<li class="layui-nav-item">';
-                    content += '<a href="javascript:;" class="site-demo-active"> <i class="layui-icon">'+obj.icons+'</i>' + obj.mname + '</a>';
+                    content += '<srgall.js href="javascript:;" class="site-demo-active"> <i class="layui-icon">'+obj.icons+'</i>' + obj.mname + '</srgall.js>';
                     //这里是添加所有的子菜单
                     content += loadchild(obj.menuList);
                     content += '</li>';
@@ -51,7 +51,7 @@ $(function () {
             if (obj != null && obj.length > 0) {
                 $.each(obj, function (i, note) {
                     content += '<dd>';
-                    content += '<a href="javascript:void(0)" data-url="' + note.href + '" data-title="' + note.mname + '" data-id="' + note.mid + '" name="item" class="site-demo-active" ><i class="layui-icon">'+note.icons+'</i>' + note.mname + '</a>';
+                    content += '<srgall.js href="javascript:void(0)" data-url="' + note.href + '" data-title="' + note.mname + '" data-id="' + note.mid + '" name="item" class="site-demo-active" ><i class="layui-icon">'+note.icons+'</i>' + note.mname + '</srgall.js>';
                     if (note == null) {
                         return;
                     }
@@ -95,12 +95,12 @@ $(function () {
             }
         };
 
-        //body > div > div.layui-side.layui-bg-black > div > ul > li.layui-nav-item.layui-nav-itemed > dl > dd.layui-this > a
+        //body > div > div.layui-side.layui-bg-black > div > ul > li.layui-nav-item.layui-nav-itemed > dl > dd.layui-this > srgall.js
         //当点击有site-demo-active属性的标签时，即左侧菜单栏中内容 ，触发点击事件
 
-       /* body > div > div.layui-side.layui-bg-black.kit-side > div > ul > li:nth-child(2) > dl > dd > a
-        body > div > div.layui-side.layui-bg-black.kit-side > div > ul > li:nth-child(3) > dl > dd.layui-this > a*/
-        $(document).on('click','body div div.layui-side.layui-bg-black.kit-side div ul li.layui-nav-item.layui-nav-itemed dl dd a',function () {
+       /* body > div > div.layui-side.layui-bg-black.kit-side > div > ul > li:nth-child(2) > dl > dd > srgall.js
+        body > div > div.layui-side.layui-bg-black.kit-side > div > ul > li:nth-child(3) > dl > dd.layui-this > srgall.js*/
+        $(document).on('click','body div div.layui-side.layui-bg-black.kit-side div ul li.layui-nav-item.layui-nav-itemed dl dd srgall.js',function () {
             var dataid = $(this);
            // alert(dataid);
             //这时会判断右侧.layui-tab-title属性下的有lay-id属性的li的数目，即已经打开的tab项数目

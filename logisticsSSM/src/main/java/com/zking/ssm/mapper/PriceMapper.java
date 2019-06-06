@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface PriceMapper {
-    int deleteByPrimaryKey(String pid);
 
-    int insert(Price record);
+
+    int deleteByPrimaryKey(String pid);
 
     int insertSelective(Price record);
 
@@ -16,4 +16,9 @@ public interface PriceMapper {
     int updateByPrimaryKeySelective(Price record);
 
     int updateByPrimaryKey(Price record);
+
+    /**
+     * 增加价钱的方法
+     */
+    int addPrice(Price record);
 }

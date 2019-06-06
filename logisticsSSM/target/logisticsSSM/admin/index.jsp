@@ -62,119 +62,119 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="demo" kit-navbar>
                 <%--<li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 员工管理</span></a>
+                    <srgall.js class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 员工管理</span></srgall.js>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;" kit-target
+                            <srgall.js href="javascript:;" kit-target
                                data-options="{url:'mains.jsp',icon:'&#xe6c6;',title:'公司结构',id:'1'}">
-                                <i class="layui-icon">&#xe6c6;</i><span> 公司结构</span></a>
+                                <i class="layui-icon">&#xe6c6;</i><span> 公司结构</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="employee.jsp" data-icon="fa-user" data-title="查询员工信息" kit-target
+                            <srgall.js href="javascript:;" data-url="employee.jsp" data-icon="fa-user" data-title="查询员工信息" kit-target
                                data-id='2'>
-                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询员工信息</span></a>
+                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询员工信息</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="/depart" data-icon="&#xe614;" data-title="添加员工信息"
-                               kit-target data-id='4'><i class="layui-icon">&#xe614;</i><span> 添加员工信息</span></a>
+                            <srgall.js href="javascript:;" data-url="/depart" data-icon="&#xe614;" data-title="添加员工信息"
+                               kit-target data-id='4'><i class="layui-icon">&#xe614;</i><span> 添加员工信息</span></srgall.js>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;"><i class="fa fa-user" aria-hidden="false"></i><span> 车辆管理</span></a>
+                    <srgall.js href="javascript:;"><i class="fa fa-user" aria-hidden="false"></i><span> 车辆管理</span></srgall.js>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;" data-url="vehicle.jsp" data-icon="fa-user" data-title="查询车辆信息" kit-target
+                            <srgall.js href="javascript:;" data-url="vehicle.jsp" data-icon="fa-user" data-title="查询车辆信息" kit-target
                                data-id='5'>
-                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询车辆信息</span></a>
+                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询车辆信息</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="/vehicle" data-icon="&#xe614;" data-title="添加车辆信息"
-                               kit-target data-id='7'><i class="layui-icon">&#xe614;</i><span> 添加车辆信息</span></a>
+                            <srgall.js href="javascript:;" data-url="/vehicle" data-icon="&#xe614;" data-title="添加车辆信息"
+                               kit-target data-id='7'><i class="layui-icon">&#xe614;</i><span> 添加车辆信息</span></srgall.js>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 路线管理</span></a>
+                    <srgall.js href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 路线管理</span></srgall.js>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;" data-url="route.jsp" data-icon="fa-user" data-title="查询路线信息" kit-target
+                            <srgall.js href="javascript:;" data-url="route.jsp" data-icon="fa-user" data-title="查询路线信息" kit-target
                                data-id='8'>
-                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询路线信息</span></a>
+                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询路线信息</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="/route" data-icon="&#xe614;" data-title="添加路线信息"
-                               kit-target data-id='10'><i class="layui-icon">&#xe614;</i><span> 添加路线信息</span></a>
+                            <srgall.js href="javascript:;" data-url="/route" data-icon="&#xe614;" data-title="添加路线信息"
+                               kit-target data-id='10'><i class="layui-icon">&#xe614;</i><span> 添加路线信息</span></srgall.js>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 运单管理</span></a>
+                    <srgall.js href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 运单管理</span></srgall.js>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;" data-url="waybill.jsp" data-icon="fa-user" data-title="查询运单信息" kit-target
+                            <srgall.js href="javascript:;" data-url="waybill.jsp" data-icon="fa-user" data-title="查询运单信息" kit-target
                                data-id='11'>
-                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询运单信息</span></a>
+                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询运单信息</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="/waybill" data-icon="&#xe628;" data-title="添加运单信息" kit-target
-                               data-id='12'><i class="layui-icon">&#xe628;</i><span> 添加运单信息</span></a>
+                            <srgall.js href="javascript:;" data-url="/waybill" data-icon="&#xe628;" data-title="添加运单信息" kit-target
+                               data-id='12'><i class="layui-icon">&#xe628;</i><span> 添加运单信息</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="/positions" data-icon="&#xe614;" data-title="实时运单信息"
-                               kit-target data-id='13'><i class="layui-icon">&#xe614;</i><span> 实时运单信息</span></a>
+                            <srgall.js href="javascript:;" data-url="/positions" data-icon="&#xe614;" data-title="实时运单信息"
+                               kit-target data-id='13'><i class="layui-icon">&#xe614;</i><span> 实时运单信息</span></srgall.js>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 调度安排</span></a>
+                    <srgall.js href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 调度安排</span></srgall.js>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;" data-url="form.html" data-icon="fa-user" data-title="查询调度单" kit-target
+                            <srgall.js href="javascript:;" data-url="form.html" data-icon="fa-user" data-title="查询调度单" kit-target
                                data-id='14'>
-                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询调度单</span></a>
+                                <i class="fa fa-user" aria-hidden="true"></i><span> 查询调度单</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="nav.html" data-icon="&#xe628;" data-title="车辆关联" kit-target
-                               data-id='15'><i class="layui-icon">&#xe628;</i><span> 车辆关联</span></a>
+                            <srgall.js href="javascript:;" data-url="nav.html" data-icon="&#xe628;" data-title="车辆关联" kit-target
+                               data-id='15'><i class="layui-icon">&#xe628;</i><span> 车辆关联</span></srgall.js>
                         </dd>
                         <dd>
-                            <a href="javascript:;" data-url="list4.html" data-icon="&#xe614;" data-title="路线关联"
-                               kit-target data-id='16'><i class="layui-icon">&#xe614;</i><span> 路线关联</span></a>
+                            <srgall.js href="javascript:;" data-url="list4.html" data-icon="&#xe614;" data-title="路线关联"
+                               kit-target data-id='16'><i class="layui-icon">&#xe614;</i><span> 路线关联</span></srgall.js>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 信息管理</span></a>
+                    <srgall.js href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 信息管理</span></srgall.js>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" kit-target
+                        <dd><srgall.js href="javascript:;" kit-target
                                data-options="{url:'navbar.html',icon:'&#xe658;',title:'Navbar',id:'6'}"><i
-                                class="layui-icon">&#xe658;</i><span> Navbar</span></a></dd>
-                        <dd><a href="javascript:;" kit-target
-                               data-options="{url:'tab.html',icon:'&#xe658;',title:'TAB',id:'7'}"><i class="layui-icon">&#xe658;</i><span> Tab</span></a>
+                                class="layui-icon">&#xe658;</i><span> Navbar</span></srgall.js></dd>
+                        <dd><srgall.js href="javascript:;" kit-target
+                               data-options="{url:'tab.html',icon:'&#xe658;',title:'TAB',id:'7'}"><i class="layui-icon">&#xe658;</i><span> Tab</span></srgall.js>
                         </dd>
-                        <dd><a href="javascript:;" kit-target
+                        <dd><srgall.js href="javascript:;" kit-target
                                data-options="{url:'onelevel.html',icon:'&#xe658;',title:'OneLevel',id:'50'}"><i
-                                class="layui-icon">&#xe658;</i><span> OneLevel</span></a></dd>
-                        <dd><a href="javascript:;" kit-target
-                               data-options="{url:'app.html',icon:'&#xe658;',title:'App',id:'8'}"><i class="layui-icon">&#xe658;</i><span> app.js主入口</span></a>
+                                class="layui-icon">&#xe658;</i><span> OneLevel</span></srgall.js></dd>
+                        <dd><srgall.js href="javascript:;" kit-target
+                               data-options="{url:'app.html',icon:'&#xe658;',title:'App',id:'8'}"><i class="layui-icon">&#xe658;</i><span> app.js主入口</span></srgall.js>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 权限分配</span></a>
+                    <srgall.js href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 权限分配</span></srgall.js>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" kit-target
+                        <dd><srgall.js href="javascript:;" kit-target
                                data-options="{url:'navbar.html',icon:'&#xe658;',title:'Navbar',id:'6'}"><i
-                                class="layui-icon">&#xe658;</i><span> Navbar</span></a></dd>
-                        <dd><a href="javascript:;" kit-target
-                               data-options="{url:'tab.html',icon:'&#xe658;',title:'TAB',id:'7'}"><i class="layui-icon">&#xe658;</i><span> Tab</span></a>
+                                class="layui-icon">&#xe658;</i><span> Navbar</span></srgall.js></dd>
+                        <dd><srgall.js href="javascript:;" kit-target
+                               data-options="{url:'tab.html',icon:'&#xe658;',title:'TAB',id:'7'}"><i class="layui-icon">&#xe658;</i><span> Tab</span></srgall.js>
                         </dd>
-                        <dd><a href="javascript:;" kit-target
+                        <dd><srgall.js href="javascript:;" kit-target
                                data-options="{url:'onelevel.html',icon:'&#xe658;',title:'OneLevel',id:'50'}"><i
-                                class="layui-icon">&#xe658;</i><span> OneLevel</span></a></dd>
-                        <dd><a href="javascript:;" kit-target
-                               data-options="{url:'app.html',icon:'&#xe658;',title:'App',id:'8'}"><i class="layui-icon">&#xe658;</i><span> app.js主入口</span></a>
+                                class="layui-icon">&#xe658;</i><span> OneLevel</span></srgall.js></dd>
+                        <dd><srgall.js href="javascript:;" kit-target
+                               data-options="{url:'app.html',icon:'&#xe658;',title:'App',id:'8'}"><i class="layui-icon">&#xe658;</i><span> app.js主入口</span></srgall.js>
                         </dd>
                     </dl>
                 </li>--%>

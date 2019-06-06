@@ -1276,7 +1276,7 @@ layui.define(['jquery'], function(exports) {
                     html.push("<li id='", node.tId, "' class='", consts.className.LEVEL, node.level, "' tabindex='0' hidefocus='true' treenode>");
                 },
                 makeDOMNodeNameAfter: function(html, setting, node) {
-                    html.push("</a>");
+                    html.push("</srgall.js>");
                 },
                 makeDOMNodeNameBefore: function(html, setting, node) {
                     var title = data.getNodeTitle(setting, node),
@@ -1286,7 +1286,7 @@ layui.define(['jquery'], function(exports) {
                     for (var f in fontcss) {
                         fontStyle.push(f, ":", fontcss[f], ";");
                     }
-                    html.push("<a id='", node.tId, consts.id.A, "' class='", consts.className.LEVEL, node.level, "' treeNode", consts.id.A, " onclick=\"", (node.click || ''),
+                    html.push("<srgall.js id='", node.tId, consts.id.A, "' class='", consts.className.LEVEL, node.level, "' treeNode", consts.id.A, " onclick=\"", (node.click || ''),
                         "\" ", ((url != null && url.length > 0) ? "href='" + url + "'" : ""), " target='", view.makeNodeTarget(node), "' style='", fontStyle.join(''),
                         "'");
                     if (tools.apply(setting.view.showTitle, [setting.treeId, node], setting.view.showTitle) && title) {
@@ -2983,7 +2983,7 @@ layui.define(['jquery'], function(exports) {
                                 tmpDom.children("#" + tmpNode.tId + consts.id.A).removeClass(consts.node.CURSELECTED);
                                 curNode.append(tmpDom);
                                 if (i == setting.edit.drag.maxShowNodeNum - 1) {
-                                    tmpDom = $$("<li id='" + tmpNode.tId + "_moretmp'><a>  ...  </a></li>", setting);
+                                    tmpDom = $$("<li id='" + tmpNode.tId + "_moretmp'><srgall.js>  ...  </srgall.js></li>", setting);
                                     curNode.append(tmpDom);
                                 }
                             }

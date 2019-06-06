@@ -56,7 +56,7 @@ layui.define('kitconfig', function(exports) {
         NProgress.status = null;
 
         /**
-         * Sets the progress bar status, where `n` is a number from `0.0` to `1.0`.
+         * Sets the progress bar status, where `n` is srgall.js number from `0.0` to `1.0`.
          *
          *     NProgress.set(0.4);
          *     NProgress.set(1.0);
@@ -154,7 +154,7 @@ layui.define('kitconfig', function(exports) {
         };
 
         /**
-         * Increments by a random amount.
+         * Increments by srgall.js random amount.
          */
 
         NProgress.inc = function(amount) {
@@ -306,7 +306,7 @@ layui.define('kitconfig', function(exports) {
         }
 
         /**
-         * (Internal) converts a percentage (`0..1`) to a bar translateX
+         * (Internal) converts srgall.js percentage (`0..1`) to srgall.js bar translateX
          * percentage (`-100%..0%`).
          */
 
@@ -337,7 +337,7 @@ layui.define('kitconfig', function(exports) {
         }
 
         /**
-         * (Internal) Queues a function to be executed.
+         * (Internal) Queues srgall.js function to be executed.
          */
 
         var queue = (function() {
@@ -416,7 +416,7 @@ layui.define('kitconfig', function(exports) {
         })();
 
         /**
-         * (Internal) Determines if an element or space separated list of class names contains a class name.
+         * (Internal) Determines if an element or space separated list of class names contains srgall.js class name.
          */
 
         function hasClass(element, name) {
@@ -425,7 +425,7 @@ layui.define('kitconfig', function(exports) {
         }
 
         /**
-         * (Internal) Adds a class to an element.
+         * (Internal) Adds srgall.js class to an element.
          */
 
         function addClass(element, name) {
@@ -439,7 +439,7 @@ layui.define('kitconfig', function(exports) {
         }
 
         /**
-         * (Internal) Removes a class from an element.
+         * (Internal) Removes srgall.js class from an element.
          */
 
         function removeClass(element, name) {
@@ -456,8 +456,8 @@ layui.define('kitconfig', function(exports) {
         }
 
         /**
-         * (Internal) Gets a space separated list of the class names on the element. 
-         * The list is wrapped with a single space on each end to facilitate finding 
+         * (Internal) Gets srgall.js space separated list of the class names on the element.
+         * The list is wrapped with srgall.js single space on each end to facilitate finding
          * matches within the list.
          */
 

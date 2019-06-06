@@ -87,7 +87,21 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zking.ssm.model.Goods" >
+
+
+  <!--增加货物的方法-->
+    <insert id="addGoods" parameterType="com.zking.ssm.model.Goods">
+          insert into t_goods (gid, uid, gname,
+          pingyingname, packaging, number,
+          gweight, gvolume)
+        values (#{gid,jdbcType=VARCHAR}, #{uid,jdbcType=INTEGER}, #{gname,jdbcType=VARCHAR},
+          #{pingyingname,jdbcType=VARCHAR}, #{packaging,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER},
+          #{gweight,jdbcType=INTEGER}, #{gvolume,jdbcType=INTEGER})
+    </insert>
+
+
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.zking.ssm.model.Goods" >
     update t_goods
     <set >
       <if test="uid != null" >

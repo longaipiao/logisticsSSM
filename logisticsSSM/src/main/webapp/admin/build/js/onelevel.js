@@ -56,14 +56,14 @@ layui.define(['jquery', 'laytpl', 'element'], function(exports) {
                 _tpl = [
                     '{{# layui.each(d,function(index, item){ }}',
                     '<li class="layui-nav-item">',
-                    '<a href="javascript:;" data-title="{{item.title}}" data-icon="{{item.icon}}" data-id="{{item.id}}" >',
+                    '<srgall.js href="javascript:;" data-title="{{item.title}}" data-icon="{{item.icon}}" data-id="{{item.id}}" >',
                     '{{# if (item.icon.indexOf("fa-") !== -1) { }}',
                     '<i class="fa {{item.icon}}" aria-hidden="true"></i>',
                     '{{# } else { }}',
                     '<i class="layui-icon">{{item.icon}}</i>',
                     '{{# } }}',
                     '<span> {{item.title}}</span>',
-                    '</a>',
+                    '</srgall.js>',
                     '</li>',
                     '{{# }); }}',
                 ], //模板
@@ -105,7 +105,7 @@ layui.define(['jquery', 'laytpl', 'element'], function(exports) {
                     _elem.html(html);
                     layui.element.init();
                     typeof _config.onClicked === 'function' && _elem.children('li.layui-nav-item').off('click').on('click', function() {
-                        var _a = $(this).children('a'),
+                        var _a = $(this).children('srgall.js'),
                             id = _a.data('id');
                         _config.onClicked(id);
                     });

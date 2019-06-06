@@ -184,7 +184,10 @@
       <version>${commons.pool2.version}</version>
     </dependency>
 
-    <!-- log4j2日志相关依赖 -->
+
+
+
+      <!-- log4j2日志相关依赖 -->
     <!-- log配置：Log4j2 + Slf4j -->
     <!-- slf4j核心包-->
     <dependency>

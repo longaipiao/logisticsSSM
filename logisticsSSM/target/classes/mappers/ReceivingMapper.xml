@@ -80,7 +80,20 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zking.ssm.model.Receiving" >
+
+    <!--增加收货方信息-->
+    <insert id="addReceiving" parameterType="com.zking.ssm.model.Receiving">
+        insert into t_receiving (rid, rname, pingyinrname,
+        rtel, remail, raddress,
+        rstate)
+      values (#{rid,jdbcType=VARCHAR}, #{rname,jdbcType=VARCHAR}, #{pingyinrname,jdbcType=VARCHAR},
+        #{rtel,jdbcType=VARCHAR}, #{remail,jdbcType=VARCHAR}, #{raddress,jdbcType=VARCHAR},
+        #{rstate,jdbcType=INTEGER})
+    </insert>
+
+
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.zking.ssm.model.Receiving" >
     update t_receiving
     <set >
       <if test="rname != null" >

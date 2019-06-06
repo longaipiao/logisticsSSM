@@ -9,8 +9,6 @@ import java.util.List;
 public interface OrderMapper {
     int deleteByPrimaryKey(String oid);
 
-    int insert(Order record);
-
     int insertSelective(Order record);
 
     Order selectByPrimaryKey(String oid);
@@ -19,6 +17,14 @@ public interface OrderMapper {
 
     int updateByPrimaryKey(Order record);
 
+    //根据用户id查询所有数据
     List<Order> selectByUid(Integer uid);
+
+    /**
+     * 添加订单的方法
+     * @param record
+     * @return
+     */
+    int addOrder(Order record);
 
 }

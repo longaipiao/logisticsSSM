@@ -17,20 +17,22 @@ $(function () {
             elem: '#date2'
         });
 
-        var config = {page:1,pageSize:2,lstart:lstart1,lend:lend1,startdate:date1,enddate:date2};
+        var config = {page:1,pageSize:6,lstart:lstart1,lend:lend1,startdate:date1,enddate:date2};
         var url = "/linelist";
         $.getJSON(url,config,function(res){
-            //alert(res.count);
+            alert(res.count);
             laypage.render({
                 elem: 'page1',
                 count: 100,
                 first: '首页',
                 last: '尾页',
+                prev: '<em>←</em>',
+                next: '<em>→</em>',
                 count: res.count, //总条数
                 limit:config.pageSize, //每页条数
                 theme: '#FFB800', //自定义颜色
                 jump: function(obj, first){
-                    //alert(obj.curr)
+                    alert(obj.curr)
                     if(!first){ //首次则不进入
                         config.page = obj.curr;
                         getUserListByPage(url,config);

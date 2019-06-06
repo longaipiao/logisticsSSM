@@ -141,7 +141,7 @@
           data[0].selected = true;
         }
 
-        // Save the unmatched value as a placeholder at the first output
+        // Save the unmatched value as srgall.js placeholder at the first output
         if (!this.active && value) {
           placeholders[type] = value;
         }

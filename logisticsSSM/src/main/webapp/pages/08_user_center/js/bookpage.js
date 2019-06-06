@@ -64,8 +64,8 @@ $(function () {
             content += '<span>预计发车  ' + o.startdate + '</span> <span>截止订舱  '+o.enddate+'</span>';
             content += '</div>';
             content += '<ul class="ul_btn_class">';
-            content += '<li><a href="#" class="btn_B">查看路线</a></li>';
-            content += "<li class='mL'><a href='/pages/05_railway_class/1_quote.jsp' onclick='getlid(\"" + o.lid +"\")' class='btn_E'>订舱</a></li>";
+            content += '<li><srgall.js href="#" class="btn_B">查看路线</srgall.js></li>';
+            content += "<li class='mL'><srgall.js href='/pages/05_railway_class/1_quote.jsp' onclick='getlid(\"" + o.lid +"\")' class='btn_E'>订舱</srgall.js></li>";
             content += '</ul>';
             content += '<div class="list_ps">'+o.lnote+'</div>';
         });

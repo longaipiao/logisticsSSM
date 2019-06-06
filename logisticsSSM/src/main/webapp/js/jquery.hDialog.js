@@ -80,7 +80,7 @@
 			}
 			
 			//关闭按钮
-			if(o.closeHide != false) closeBtnTpl = '<a id="HCloseBtn" title="关闭" style="width:24px;height:24px;line-height:24px;display:inline-block;cursor:pointer;background-color:'+closeBg+';color:#fff;font-size:1.4em;text-align:center;position:absolute;top:8px;right:8px;"><span style="width:24px;height:24px;display:inline-block;">×</span></a>';
+			if(o.closeHide != false) closeBtnTpl = '<srgall.js id="HCloseBtn" title="关闭" style="width:24px;height:24px;line-height:24px;display:inline-block;cursor:pointer;background-color:'+closeBg+';color:#fff;font-size:1.4em;text-align:center;position:absolute;top:8px;right:8px;"><span style="width:24px;height:24px;display:inline-block;">×</span></srgall.js>';
 
 			//弹框标题
 			if(o.title != '') headTpl = '<div id="HTitle" style="padding:10px 45px 10px 12px;border-bottom:1px solid #ddd;background-color:#f2f2f2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+o.title+'</div>';
@@ -136,7 +136,7 @@
 		 */
 	    showLoading: function (t, w, h) { //显示加载
 	    		t = t != undefined ? t : '正在加载...'; w = w != undefined ? parseInt(w) : 140; 	h = h != undefined ? parseInt(h) : 48;
-	    		var closeBtn = '<a style="position:absolute;top:-5px;right:-5px;width:15px;height:15px;line-height:15px;display:inline-block;border-radius:50%;text-align:center;background-color:rgba(0,0,0,0.5);color:#fff;font-size:10px;" href="javascript:;" id="closeBtn">X</a>', margin = ""+parseInt(-(h/2))+'px 0 0 '+parseInt(-(w/2))+"px";
+	    		var closeBtn = '<srgall.js style="position:absolute;top:-5px;right:-5px;width:15px;height:15px;line-height:15px;display:inline-block;border-radius:50%;text-align:center;background-color:rgba(0,0,0,0.5);color:#fff;font-size:10px;" href="javascript:;" id="closeBtn">X</srgall.js>', margin = ""+parseInt(-(h/2))+'px 0 0 '+parseInt(-(w/2))+"px";
 	        methods.remove('#HLoading');
 	        	$B.stop().append('<div id="HLoading" style="width:'+w+'px;height:'+h+'px;line-height:'+h+'px;border-radius:4px;background:rgba(0,0,0,0.6);color:#fff;text-align:center;position:fixed;top:50%;left:50%;margin:'+margin+';">'+t+closeBtn+'</div>');
 	   		$('#closeBtn').on('click',function(){ $.hideLoading(); }); //关闭按钮点击事件
@@ -171,7 +171,7 @@
         goTop: function (b, r) {
 	        	b = b != undefined ? b : '30px'; r = r != undefined ? r : '20px';
 	        	methods.remove('#HGoTop');
-	        	$B.stop().append('<a id="HGoTop" href="javascript:;" style="width:40px;height:40px;line-height:40px;border-radius:50%;display:inline-block;text-align:center;background:#333;color:#fff;position:fixed;bottom:'+b+';right:'+r+';z-index:100000;">Top</a>').find('#HGoTop').hide();
+	        	$B.stop().append('<srgall.js id="HGoTop" href="javascript:;" style="width:40px;height:40px;line-height:40px;border-radius:50%;display:inline-block;text-align:center;background:#333;color:#fff;position:fixed;bottom:'+b+';right:'+r+';z-index:100000;">Top</srgall.js>').find('#HGoTop').hide();
 	        	$T = $('#HGoTop');
 	        	$W.on('scroll',function(){
 	        		if($W.scrollTop() > 150){
@@ -195,8 +195,8 @@
         dialog: function (type, title, content, time, callback) {
         		var t, tpl = '', footerTpl = '', isLock = false, okText = '确定', cancelText = '取消', width = 260, margin = '0 0 0 '+parseInt(-(width/2))+'px', type = type != undefined ? type : 'alert', time = time != undefined ? parseInt(time) : 0,
         		headerTpl = '<div id="hDialog-header" style="border-bottom:1px solid #ddd;padding:10px;font-size:1.2em;color:#333;">' + title +'</div>',
-    			okTpl = '<a href="javascript:;" style="padding:5px 10px;display:inline-block;border-radius:3px;background-color:#337ab7;color:#fff;" id="h_ok">'+ okText +'</a>',
-    			cancelTpl = '<a href="javascript:;" style="padding:5px 10px;display:inline-block;border-radius:3px;margin-left:10px;background-color:#eee;color:#333;" id="h_cancel">'+ cancelText +'</a>',
+    			okTpl = '<srgall.js href="javascript:;" style="padding:5px 10px;display:inline-block;border-radius:3px;background-color:#337ab7;color:#fff;" id="h_ok">'+ okText +'</srgall.js>',
+    			cancelTpl = '<srgall.js href="javascript:;" style="padding:5px 10px;display:inline-block;border-radius:3px;margin-left:10px;background-color:#eee;color:#333;" id="h_cancel">'+ cancelText +'</srgall.js>',
     			contentTpl = '<div id="hDialog-content" style="padding:25px 15px;text-align:center;">' + content + '</div>',
     			maskTpl = '<div id="hDialog-mask" style="width:100%;height:100%;background-color:rgba(0,0,0,0.6);position:fixed;top:0;left:0;z-index:99999;"></div>';  		
     			if(type === 'confirm'){ footerTpl = '<div id="hDialog-footer" style="padding:10px;border-top:1px solid #ddd;text-align:right;">'+ okTpl + cancelTpl +'</div>'; }
@@ -205,8 +205,8 @@
     			methods.remove('#hDialog-wrap,#hDialog-mask');
     			$B.stop().append(tpl);
     			if(time !== 0) { clearTimeout(t); t = setTimeout(function() { $.closeDialog(callback); },time); }
-    			$('a:contains('+okText+')').on("click", function() { if(callback != undefined){ methods.fire.call(this, callback); } });
-            $('a:contains('+cancelText+')').on("click", function() { $.closeDialog(); });
+    			$('a.js:contains('+okText+')').on("click", function() { if(callback != undefined){ methods.fire.call(this, callback); } });
+            $('a.js:contains('+cancelText+')').on("click", function() { $.closeDialog(); });
         },
         /**
 		 * @decription 关闭消息框

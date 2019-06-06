@@ -15,4 +15,10 @@ public interface GoodsService {
     int updateByPrimaryKeySelective(Goods record);
 
     int updateByPrimaryKey(Goods record);
+
+
+    /**
+     * 增加货物的方法
+     */
+    int addGoods(Goods goods);
 }

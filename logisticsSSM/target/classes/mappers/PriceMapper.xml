@@ -24,12 +24,18 @@
     delete from t_price
     where pid = #{pid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.zking.ssm.model.Price" >
+
+
+  <!--增加价钱的方法-->
+  <insert id="addPrice" parameterType="com.zking.ssm.model.Price" >
     insert into t_price (pid, uid, pweight,
       landfreight, servicefee, totalmoney)
     values (#{pid,jdbcType=VARCHAR}, #{uid,jdbcType=INTEGER}, #{pweight,jdbcType=VARCHAR},
       #{landfreight,jdbcType=INTEGER}, #{servicefee,jdbcType=INTEGER}, #{totalmoney,jdbcType=INTEGER})
   </insert>
+
+
+
   <insert id="insertSelective" parameterType="com.zking.ssm.model.Price" >
     insert into t_price
     <trim prefix="(" suffix=")" suffixOverrides="," >

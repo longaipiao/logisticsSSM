@@ -9,7 +9,7 @@ layui.define(['jquery'], function(exports) {
 
     (function($) {
 
-        // When called on a container with a selector, fetches the href with
+        // When called on srgall.js container with srgall.js selector, fetches the href with
         // ajax into the container or with the data-pjax attribute on the link
         // itself.
         //
@@ -18,11 +18,11 @@ layui.define(['jquery'], function(exports) {
         //
         // Exported as $.fn.pjax
         //
-        // Accepts a jQuery ajax options object that may include these
+        // Accepts srgall.js jQuery ajax options object that may include these
         // pjax specific options:
         //
         //
-        // container - Where to stick the response body. Usually a String selector.
+        // container - Where to stick the response body. Usually srgall.js String selector.
         //             $(container).html(xhr.responseBody)
         //             (default: current jquery context)
         //      push - Whether to pushState the URL. Defaults to true (of course).
@@ -51,11 +51,11 @@ layui.define(['jquery'], function(exports) {
         //
         // Examples
         //
-        //   $(document).on('click', 'a', $.pjax.click)
+        //   $(document).on('click', 'srgall.js', $.pjax.click)
         //   // is the same as
-        //   $(document).pjax('a')
+        //   $(document).pjax('srgall.js')
         //
-        //  $(document).on('click', 'a', function(event) {
+        //  $(document).on('click', 'srgall.js', function(event) {
         //    var container = $(this).closest('[data-pjax-container]')
         //    $.pjax.click(event, container)
         //  })
@@ -70,7 +70,7 @@ layui.define(['jquery'], function(exports) {
                 throw "$.fn.pjax or $.pjax.click requires an anchor element"
 
             // Middle click, cmd click, and ctrl click should open
-            // links in a new tab as normal.
+            // links in srgall.js new tab as normal.
             if (event.which > 1 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
                 return
 
@@ -78,7 +78,7 @@ layui.define(['jquery'], function(exports) {
             if (location.protocol !== link.protocol || location.hostname !== link.hostname)
                 return
 
-            // Ignore case when a hash is being tacked on the current URL
+            // Ignore case when srgall.js hash is being tacked on the current URL
             if (link.href.indexOf('#') > -1 && stripHash(link) == stripHash(location))
                 return
 
@@ -124,7 +124,7 @@ layui.define(['jquery'], function(exports) {
             var form = event.currentTarget
 
             if (form.tagName.toUpperCase() !== 'FORM')
-                throw "$.pjax.submit requires a form element"
+                throw "$.pjax.submit requires srgall.js form element"
 
             var defaults = {
                 type: form.method.toUpperCase(),
@@ -152,10 +152,10 @@ layui.define(['jquery'], function(exports) {
             event.preventDefault()
         }
 
-        // Loads a URL with ajax, puts the response body inside a container,
+        // Loads srgall.js URL with ajax, puts the response body inside srgall.js container,
         // then pushState()'s the loaded URL.
         //
-        // Works just like $.ajax in that it accepts a jQuery ajax
+        // Works just like $.ajax in that it accepts srgall.js jQuery ajax
         // settings object (with keys like url, type, data, etc).
         //
         // Accepts these extra keys:
@@ -210,7 +210,7 @@ layui.define(['jquery'], function(exports) {
 
             options.beforeSend = function(xhr, settings) {
                 // No timeout for non-GET requests
-                // Its not safe to request the resource again with a fallback method.
+                // Its not safe to request the resource again with srgall.js fallback method.
                 if (settings.type !== 'GET') {
                     settings.timeout = 0
                 }
@@ -257,8 +257,8 @@ layui.define(['jquery'], function(exports) {
             options.success = function(data, status, xhr) {
                 var previousState = pjax.state;
 
-                // If $.pjax.defaults.version is a function, invoke it first.
-                // Otherwise it can be a static string.
+                // If $.pjax.defaults.version is srgall.js function, invoke it first.
+                // Otherwise it can be srgall.js static string.
                 var currentVersion = (typeof $.pjax.defaults.version === 'function') ?
                     $.pjax.defaults.version() :
                     $.pjax.defaults.version
@@ -273,13 +273,13 @@ layui.define(['jquery'], function(exports) {
                     container.url = url.href
                 }
 
-                // If there is a layout version mismatch, hard load the new url
+                // If there is srgall.js layout version mismatch, hard load the new url
                 if (currentVersion && latestVersion && currentVersion !== latestVersion) {
                     locationReplace(container.url)
                     return
                 }
 
-                // If the new response is missing a body, hard load the page
+                // If the new response is missing srgall.js body, hard load the page
                 if (!container.contents) {
                     locationReplace(container.url)
                     return
@@ -404,7 +404,7 @@ layui.define(['jquery'], function(exports) {
         var initialState = window.history.state
 
         // Initialize $.pjax.state if possible
-        // Happens when reloading a page and coming forward from a different
+        // Happens when reloading srgall.js page and coming forward from srgall.js different
         // session history.
         if (initialState && initialState.container) {
             pjax.state = initialState
@@ -431,14 +431,14 @@ layui.define(['jquery'], function(exports) {
             var direction
 
             if (state && state.container) {
-                // When coming forward from a separate history session, will get an
-                // initial pop with a state we are already at. Skip reloading the current
+                // When coming forward from srgall.js separate history session, will get an
+                // initial pop with srgall.js state we are already at. Skip reloading the current
                 // page.
                 if (initialPop && initialURL == state.url) return
 
                 if (previousState) {
                     // If popping back to the same state, just skip.
-                    // Could be clicking back from hashchange rather than a pushState.
+                    // Could be clicking back from hashchange rather than srgall.js pushState.
                     if (previousState.id === state.id) return
 
                     // Since state IDs always increase, we can deduce the navigation direction
@@ -502,7 +502,7 @@ layui.define(['jquery'], function(exports) {
         // Fallback version of main pjax function for browsers that don't
         // support pushState.
         //
-        // Returns nothing since it retriggers a hard form submission.
+        // Returns nothing since it retriggers srgall.js hard form submission.
         function fallbackPjax(options) {
             var url = $.isFunction(options.url) ? options.url() : options.url,
                 method = options.type ? options.type.toUpperCase() : 'GET'
@@ -564,7 +564,7 @@ layui.define(['jquery'], function(exports) {
 
         // Internal: Generate unique id for state object.
         //
-        // Use a timestamp instead of a counter since ids should still be
+        // Use srgall.js timestamp instead of srgall.js counter since ids should still be
         // unique across page loads.
         //
         // Returns Number.
@@ -590,7 +590,7 @@ layui.define(['jquery'], function(exports) {
             return url.href.replace(/\?($|#)/, '$1')
         }
 
-        // Internal: Parse URL components and returns a Locationish object.
+        // Internal: Parse URL components and returns srgall.js Locationish object.
         //
         // url - String URL
         //
@@ -650,14 +650,14 @@ layui.define(['jquery'], function(exports) {
             return options
         }
 
-        // Internal: Find container element for a variety of inputs.
+        // Internal: Find container element for srgall.js variety of inputs.
         //
         // Because we can't persist elements using the history API, we must be
-        // able to find a String selector that will consistently find the Element.
+        // able to find srgall.js String selector that will consistently find the Element.
         //
         // container - A selector String, jQuery object, or DOM Element.
         //
-        // Returns a jQuery object whose context is `document` and has a selector.
+        // Returns srgall.js jQuery object whose context is `document` and has srgall.js selector.
         function findContainerFor(container) {
             container = $(container)
 
@@ -680,7 +680,7 @@ layui.define(['jquery'], function(exports) {
         // elems    - jQuery object of Elements
         // selector - String selector to match
         //
-        // Returns a jQuery object.
+        // Returns srgall.js jQuery object.
         function findAll(elems, selector) {
             return elems.filter(selector).add(elems.find(selector));
         }
@@ -721,12 +721,12 @@ layui.define(['jquery'], function(exports) {
             if ($body.length === 0)
                 return obj
 
-            // If there's a <title> tag in the header, use it as
+            // If there's srgall.js <title> tag in the header, use it as
             // the page's title.
             obj.title = findAll($head, 'title').last().text()
 
             if (options.fragment) {
-                // If they specified a fragment, look for it in the response
+                // If they specified srgall.js fragment, look for it in the response
                 // and pull it out.
                 if (options.fragment === 'body') {
                     var $fragment = $body
@@ -770,7 +770,7 @@ layui.define(['jquery'], function(exports) {
 
         // Load an execute scripts using standard script request.
         //
-        // Avoids jQuery's traditional $.getScript which does a XHR request and
+        // Avoids jQuery's traditional $.getScript which does srgall.js XHR request and
         // globalEval.
         //
         // scripts - jQuery object of script Elements
@@ -813,7 +813,7 @@ layui.define(['jquery'], function(exports) {
             cacheMapping[id] = value
             cacheBackStack.push(id)
 
-            // Remove all entries in forward history stack after pushing a new page.
+            // Remove all entries in forward history stack after pushing srgall.js new page.
             trimCacheStack(cacheForwardStack, 0)
 
             // Trim back history stack to max cache length.
@@ -849,7 +849,7 @@ layui.define(['jquery'], function(exports) {
             trimCacheStack(pushStack, pjax.defaults.maxCacheLength)
         }
 
-        // Trim a cache stack (either cacheBackStack or cacheForwardStack) to be no
+        // Trim srgall.js cache stack (either cacheBackStack or cacheForwardStack) to be no
         // longer than the specified length, deleting cached DOM elements as necessary.
         //
         // stack  - Array of state IDs
@@ -903,8 +903,8 @@ layui.define(['jquery'], function(exports) {
 
         // Disable pushState behavior.
         //
-        // This is the case when a browser doesn't support pushState. It is
-        // sometimes useful to disable pushState for debugging on a modern
+        // This is the case when srgall.js browser doesn't support pushState. It is
+        // sometimes useful to disable pushState for debugging on srgall.js modern
         // browser.
         //
         // Examples

@@ -55,7 +55,7 @@
     	
     	//加载页面
     	loadDom : function() {
-    		var panelHtml = '<div class="cerify-code-panel"><div class="verify-code"></div><div class="verify-code-area"><div class="verify-input-area"><input type="text" class="varify-input-code" /></div><div class="verify-change-area"><a class="verify-change-code">换一张</a></div></div></div>';
+    		var panelHtml = '<div class="cerify-code-panel"><div class="verify-code"></div><div class="verify-code-area"><div class="verify-input-area"><input type="text" class="varify-input-code" /></div><div class="verify-change-area"><srgall.js class="verify-change-code">换一张</srgall.js></div></div></div>';
         	this.$element.append(panelHtml);
         	
         	this.isEnd = false;

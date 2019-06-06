@@ -20,11 +20,6 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public int insert(Order record) {
-        return orderMapper.insert(record);
-    }
-
-    @Override
     public int insertSelective(Order record) {
         return orderMapper.insertSelective(record);
     }
@@ -44,9 +39,23 @@ public class OrderServiceImpl implements OrderService {
         return orderMapper.updateByPrimaryKey(record);
     }
 
+    /**
+     * 根据用户id查询所有的订单
+     * @param uid
+     * @return
+     */
     @Override
     public List<Order> selectByUid(Integer uid) {
-        return orderMapper.selectByUid(uid
-        );
+        return orderMapper.selectByUid(uid);
+    }
+
+    /**
+     * 添加订单的方法
+     * @param record
+     * @return
+     */
+    @Override
+    public int addOrder(Order record) {
+        return orderMapper.addOrder(record);
     }
 }

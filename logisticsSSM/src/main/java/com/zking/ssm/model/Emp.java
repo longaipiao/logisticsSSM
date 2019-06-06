@@ -1,7 +1,9 @@
 package com.zking.ssm.model;
 
-import java.io.Serializable;
+import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+@Component
 public class Emp implements Serializable {
     private String eid;
 

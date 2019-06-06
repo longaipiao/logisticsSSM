@@ -1,7 +1,8 @@
 package com.zking.ssm.model;
 
-import java.io.Serializable;
+import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 public class Line implements Serializable {
     private String lid;
 
@@ -28,6 +29,16 @@ public class Line implements Serializable {
     private String train;
 
     private String lserial;
+
+    private Integer lstate;
+
+    public Integer getLstate() {
+        return lstate;
+    }
+
+    public void setLstate(Integer lstate) {
+        this.lstate = lstate;
+    }
 
     private static final long serialVersionUID = 1L;
 
@@ -151,6 +162,7 @@ public class Line implements Serializable {
                 ", voyage='" + voyage + '\'' +
                 ", train='" + train + '\'' +
                 ", lserial='" + lserial + '\'' +
+                ", lstate=" + lstate +
                 '}';
     }
 }
