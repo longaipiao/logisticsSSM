@@ -23,6 +23,8 @@ public interface OrderService {
      */
     List<Order> selectByUid(Integer uid);
 
+    List<Order> selectByCX(Integer uid, String oid,String blno,String qyz,String mdz);
+
     /**
      * 添加订单的方法
      */

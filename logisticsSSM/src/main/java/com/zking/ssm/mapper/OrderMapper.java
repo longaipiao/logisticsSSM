@@ -20,6 +20,8 @@ public interface OrderMapper {
     //根据用户id查询所有数据
     List<Order> selectByUid(Integer uid);
 
+    List<Order> selectByCX(Integer uid, String oid,String blno,String qyz,String mdz);
+
     /**
      * 添加订单的方法
      * @param record

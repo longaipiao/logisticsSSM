@@ -23,14 +23,16 @@
     </association>
 
   </resultMap>
+
   <sql id="Base_Column_List" >
     oid, uid, blno, credate, onumber, ostate, pid, lid, oaddress, thstate
   </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
-    <include refid="Base_Column_List" />
-    from t_order
-    where oid = #{oid,jdbcType=VARCHAR}
+    a.*,b.*
+    from t_order a,t_price b
+    where a.pid=b.pid and oid = #{oid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_order
@@ -164,6 +166,29 @@
   <select id="selectByUid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
     SELECT a.*,b.* FROM t_order a,t_price b where a.uid = #{uid} and a.pid = b.pid
   </select>
+
+  <select id="selectByCX" resultMap="BaseResultMap">
+    select
+    a.*,b.*,c.*
+    from t_order a,t_line b,t_price c
+    where a.lid=b.lid and a.pid = c.pid
+     and a.uid = #{param1}
+    <if test="param2!=''">
+     and a.oid = #{param2}
+    </if>
+    <if test="param3!=''">
+     and a.blno = #{param3}
+    </if>
+    <if test="param4!=''">
+     and b.lstart = #{param4}
+    </if>
+    <if test="param5!=''">
+     and b.lend = #{param5}
+    </if>
+
+
+  </select>
+
 
 
 </mapper>

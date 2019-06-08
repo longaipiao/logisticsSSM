@@ -6,6 +6,7 @@ import com.zking.ssm.mapper.LineMapper;
 import com.zking.ssm.model.Line;
 import com.zking.ssm.service.LineService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
  * @company 飘飘公司
  * @create 2019-05-31 22:26
  */
-@Service
+@Service("lineService")
 public class LineServiceImpl implements LineService {
 
     @Autowired

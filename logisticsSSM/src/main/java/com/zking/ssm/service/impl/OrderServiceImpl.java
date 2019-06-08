@@ -49,6 +49,11 @@ public class OrderServiceImpl implements OrderService {
         return orderMapper.selectByUid(uid);
     }
 
+    @Override
+    public List<Order> selectByCX(Integer uid, String oid, String blno, String qyz, String mdz) {
+        return orderMapper.selectByCX(uid,oid,blno,qyz,mdz);
+    }
+
     /**
      * 添加订单的方法
      * @param record

@@ -1,10 +1,20 @@
 package com.zking.ssm.model;
 
+import com.zking.ssm.mapper.OrderMapper;
+import com.zking.ssm.service.LineService;
+import com.zking.ssm.service.OrderService;
+import com.zking.ssm.service.impl.LineServiceImpl;
+import com.zking.ssm.service.impl.OrderServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 @Component
 public class Order implements Serializable {
+
+    @Autowired
+    private LineService lineService;
+
     private String oid;
 
     private Integer uid;
@@ -24,6 +34,7 @@ public class Order implements Serializable {
     private String oaddress;
 
     private Integer thstate;
+
 
     private static final long serialVersionUID = 1L;
 
